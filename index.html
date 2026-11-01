@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07111f">
+    <title>JavaScript Phase 1 | Arslan Weblab Learning Hub</title>
+    <link rel="icon" href="logo.webp">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        :root {
+            --bg: #07111f;
+            --surface: #0d1b2c;
+            --surface-light: #12243a;
+            --border: #24364c;
+            --text: #edf5ff;
+            --muted: #a0b0c5;
+            --accent: #39d5f6;
+            --accent-dark: #102f43;
+            --green: #58e6a5;
+            --yellow: #ffd17a;
+            --red: #ff7777;
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        code, pre {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(7, 17, 31, 0.95);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-label {
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 90px 6% 60px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 16px;
+            border: 1px solid #28566b;
+            border-radius: 30px;
+            color: var(--accent);
+            background: var(--accent-dark);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 22px;
+            line-height: 1.12;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-stats strong {
+            font-size: 1.6rem;
+            color: var(--accent);
+        }
+
+        .hero-stats span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        /* LESSONS SECTION */
+        .lessons {
+            max-width: 1240px;
+            margin: 40px auto 90px;
+            padding: 0 6%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-heading span.eyebrow {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin: 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 0.98rem;
+        }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .lesson-card {
+            position: relative;
+            padding: 28px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            text-decoration: none;
+            color: var(--text);
+            transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(57, 213, 246, 0.12);
+        }
+
+        .lesson-number {
+            display: inline-grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            color: var(--accent);
+            background: var(--accent-dark);
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
+        }
+
+        .lesson-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .lesson-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        /* CURRICULUM HIGHLIGHTS */
+        .features-section {
+            background: #091727;
+            padding: 85px 6%;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .features-grid {
+            max-width: 1240px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-box {
+            padding: 30px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .feature-box h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .feature-box p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            max-width: 900px;
+            margin: 90px auto;
+            padding: 0 6%;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .faq-item {
+            padding: 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .faq-item p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* PROGRESS BANNER */
+        .progress-section {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            padding: 35px;
+            background: linear-gradient(135deg, #0e2438, #0a1727);
+            border: 1px solid #28566b;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .progress-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .progress-section p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050c15;
+            padding: 50px 7% 25px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        footer span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .lesson-grid, .features-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .lesson-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 16px 5%;
+            }
+            .hero-stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="Day 1/logo.webp" alt="Arslan Weblab Logo">
+            Arslan <span>Weblab</span>
+        </div>
+        <div class="header-label">Phase 1 Learning Hub</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="badge">🚀 COMPLETE PHASE 1 CURRICULUM</span>
+            <h1>Master Modern <span>JavaScript</span> & Backend Basics</h1>
+            <p>
+                Welcome to the central learning hub of Arslan Weblab. Follow a structured 
+                10-day roadmap from modern ES6+ features, asynchronous patterns, and API integrations 
+                up to building real projects and full backend concepts.
+            </p>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>10 Days</strong>
+                    <span>Core Curriculum</span>
+                </div>
+                <div>
+                    <strong>100%</strong>
+                    <span>Mobile Responsive</span>
+                </div>
+                <div>
+                    <strong>Interactive</strong>
+                    <span>Playgrounds & Quizzes</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lessons">
+            <div class="section-heading">
+                <span class="eyebrow">CURRICULUM ROADMAP</span>
+                <h2>Explore Your Lessons</h2>
+                <p>Select any day below to launch its dedicated module, interactive code playground, and revision assets.</p>
+            </div>
+
+            <div class="lesson-grid">
+
+                <a href="Day 1/index.html" class="lesson-card">
+                    <span class="lesson-number">01</span>
+                    <h3>ES6+ Fundamentals</h3>
+                    <p>Modern variable declarations, arrow functions, template literals, and syntax improvements.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 2/index.html" class="lesson-card">
+                    <span class="lesson-number">02</span>
+                    <h3>Destructuring & Spread</h3>
+                    <p>Extract data cleanly from objects and arrays using destructuring, spread, and rest parameters.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 3/index.html" class="lesson-card">
+                    <span class="lesson-number">03</span>
+                    <h3>Array Methods</h3>
+                    <p>Master powerful array transformations with map, filter, reduce, find, and chainable operations.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 4/index.html" class="lesson-card">
+                    <span class="lesson-number">04</span>
+                    <h3>JavaScript Modules</h3>
+                    <p>Organize code into clean, scalable files using ES module imports and exports.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 5/index.html" class="lesson-card">
+                    <span class="lesson-number">05</span>
+                    <h3>JSON & Fetch API</h3>
+                    <p>Exchange data across networks, parse JSON objects, and consume external web endpoints.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 6/index.html" class="lesson-card">
+                    <span class="lesson-number">06</span>
+                    <h3>JavaScript Promises</h3>
+                    <p>Handle asynchronous operations, states, chaining, and error management robustly.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 7/index.html" class="lesson-card">
+                    <span class="lesson-number">07</span>
+                    <h3>Async & Await</h3>
+                    <p>Write synchronous-looking asynchronous code with try/catch error handling blocks.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 8/index.html" class="lesson-card">
+                    <span class="lesson-number">08</span>
+                    <h3>HTTP Fundamentals</h3>
+                    <p>Understand request-response cycles, status codes, headers, and client-server architecture.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 9/index.html" class="lesson-card">
+                    <span class="lesson-number">09</span>
+                    <h3>Weather App Project</h3>
+                    <p>Build a fully functional, live-fetching weather web application combining multiple APIs.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+                <a href="Day 10/index.html" class="lesson-card">
+                    <span class="lesson-number">10</span>
+                    <h3>Final Revision</h3>
+                    <p>Comprehensive review of Phase 1 concepts, interactive practice labs, and full progress tracking.</p>
+                    <span class="arrow">Open Lesson →</span>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="section-heading">
+                <span class="eyebrow">PLATFORM BENEFITS</span>
+                <h2>Why Learn With Arslan Weblab?</h2>
+                <p>Designed with a consistent layout, interactive learning elements, and persistent tracking.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>Dark Theme Interface</h3>
+                    <p>Easy on the eyes with optimized contrast, modern typography, and clear code snippet syntax highlighting.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>LocalStorage Progress</h3>
+                    <p>Your lesson completion checkboxes and quiz marks are saved locally so you can resume anytime without losing data.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Downloadable Sheets</h3>
+                    <p>Every single day includes a dedicated visual revision summary card that you can download directly to your device.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="section-heading">
+                <span class="eyebrow">HELP & GUIDANCE</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about completing Phase 1 successfully.</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Do I need any prior programming experience?</h3>
+                    <p>Basic familiarity with HTML and CSS is helpful, but the roadmap guides you smoothly into JavaScript fundamentals from day one.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How are my progress checkboxes stored?</h3>
+                    <p>We use your browser's built-in <code>localStorage</code> API. Your data stays securely on your device across sessions.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What comes after Phase 1?</h3>
+                    <p>Once you master JavaScript fundamentals and basic server communications here, you'll be fully prepared to step into advanced backend architecture and frameworks.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-section">
+            <h3>🎯 Ready to Start Learning?</h3>
+            <p>
+                Pick up right where you left off or dive straight into Day 01. 
+                Build your skills, complete code playgrounds, and master web development one step at a time.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        Built with dedication and focus by <span>Arslan</span> | Arslan Weblab Learning Hub © <span id="year">2026</span>
+    </footer>
+
+    <script>
+        // Update copyright year dynamically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
