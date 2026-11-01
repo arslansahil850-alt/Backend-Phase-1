@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#07111f">
     <title>JavaScript Phase 1 | Arslan Weblab Learning Hub</title>
-    <link rel="icon" href="logo.webp">
+    <link rel="icon" href="Day 1/logo.webp">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -50,7 +50,8 @@
             text-decoration: none;
         }
 
-        code, pre {
+        code,
+        pre {
             font-family: 'JetBrains Mono', monospace;
         }
 
@@ -337,37 +338,93 @@
             font-size: 0.95rem;
         }
 
-        /* FOOTER */
-        footer {
-            background: #050c15;
-            padding: 50px 7% 25px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.88rem;
+        .main-footer {
+            background: #050f18;
+            border-top: 1px solid rgba(56, 230, 224, 0.2);
+            padding: 65px 8% 20px;
         }
 
-        footer span {
-            color: var(--accent);
-            font-weight: 700;
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
         }
 
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 1024px) {
-            .lesson-grid, .features-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+        .footer-brand h2 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h2 span {
+            color: #38e6e0;
+        }
+
+        .footer-brand p {
+            color: #8fa5b3;
+            line-height: 1.8;
+            max-width: 300px;
+            font-size: 14px;
+        }
+
+        .footer-links h3 {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #8fa5b3;
+            text-decoration: none;
+            margin-bottom: 13px;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #38e6e0;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 55px auto 0;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: #718896;
+            font-size: 13px;
+        }
+
+        .footer-heart {
+            color: #38e6e0;
+        }
+
+        @media (max-width: 800px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 720px) {
-            .lesson-grid, .features-grid {
+        @media (max-width: 500px) {
+            .main-footer {
+                padding: 50px 7% 20px;
+            }
+
+            .footer-container {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
-            header {
-                padding: 16px 5%;
-            }
-            .hero-stats {
-                gap: 20px;
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -388,8 +445,8 @@
             <span class="badge">🚀 COMPLETE PHASE 1 CURRICULUM</span>
             <h1>Master Modern <span>JavaScript</span> & Backend Basics</h1>
             <p>
-                Welcome to the central learning hub of Arslan Weblab. Follow a structured 
-                10-day roadmap from modern ES6+ features, asynchronous patterns, and API integrations 
+                Welcome to the central learning hub of Arslan Weblab. Follow a structured
+                10-day roadmap from modern ES6+ features, asynchronous patterns, and API integrations
                 up to building real projects and full backend concepts.
             </p>
 
@@ -413,7 +470,8 @@
             <div class="section-heading">
                 <span class="eyebrow">CURRICULUM ROADMAP</span>
                 <h2>Explore Your Lessons</h2>
-                <p>Select any day below to launch its dedicated module, interactive code playground, and revision assets.</p>
+                <p>Select any day below to launch its dedicated module, interactive code playground, and revision
+                    assets.</p>
             </div>
 
             <div class="lesson-grid">
@@ -428,14 +486,16 @@
                 <a href="Day 2/index.html" class="lesson-card">
                     <span class="lesson-number">02</span>
                     <h3>Destructuring & Spread</h3>
-                    <p>Extract data cleanly from objects and arrays using destructuring, spread, and rest parameters.</p>
+                    <p>Extract data cleanly from objects and arrays using destructuring, spread, and rest parameters.
+                    </p>
                     <span class="arrow">Open Lesson →</span>
                 </a>
 
                 <a href="Day 3/index.html" class="lesson-card">
                     <span class="lesson-number">03</span>
                     <h3>Array Methods</h3>
-                    <p>Master powerful array transformations with map, filter, reduce, find, and chainable operations.</p>
+                    <p>Master powerful array transformations with map, filter, reduce, find, and chainable operations.
+                    </p>
                     <span class="arrow">Open Lesson →</span>
                 </a>
 
@@ -484,7 +544,8 @@
                 <a href="Day 10/index.html" class="lesson-card">
                     <span class="lesson-number">10</span>
                     <h3>Final Revision</h3>
-                    <p>Comprehensive review of Phase 1 concepts, interactive practice labs, and full progress tracking.</p>
+                    <p>Comprehensive review of Phase 1 concepts, interactive practice labs, and full progress tracking.
+                    </p>
                     <span class="arrow">Open Lesson →</span>
                 </a>
 
@@ -501,15 +562,18 @@
             <div class="features-grid">
                 <div class="feature-box">
                     <h3>Dark Theme Interface</h3>
-                    <p>Easy on the eyes with optimized contrast, modern typography, and clear code snippet syntax highlighting.</p>
+                    <p>Easy on the eyes with optimized contrast, modern typography, and clear code snippet syntax
+                        highlighting.</p>
                 </div>
                 <div class="feature-box">
                     <h3>LocalStorage Progress</h3>
-                    <p>Your lesson completion checkboxes and quiz marks are saved locally so you can resume anytime without losing data.</p>
+                    <p>Your lesson completion checkboxes and quiz marks are saved locally so you can resume anytime
+                        without losing data.</p>
                 </div>
                 <div class="feature-box">
                     <h3>Downloadable Sheets</h3>
-                    <p>Every single day includes a dedicated visual revision summary card that you can download directly to your device.</p>
+                    <p>Every single day includes a dedicated visual revision summary card that you can download directly
+                        to your device.</p>
                 </div>
             </div>
         </section>
@@ -524,15 +588,18 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3>Do I need any prior programming experience?</h3>
-                    <p>Basic familiarity with HTML and CSS is helpful, but the roadmap guides you smoothly into JavaScript fundamentals from day one.</p>
+                    <p>Basic familiarity with HTML and CSS is helpful, but the roadmap guides you smoothly into
+                        JavaScript fundamentals from day one.</p>
                 </div>
                 <div class="faq-item">
                     <h3>How are my progress checkboxes stored?</h3>
-                    <p>We use your browser's built-in <code>localStorage</code> API. Your data stays securely on your device across sessions.</p>
+                    <p>We use your browser's built-in <code>localStorage</code> API. Your data stays securely on your
+                        device across sessions.</p>
                 </div>
                 <div class="faq-item">
                     <h3>What comes after Phase 1?</h3>
-                    <p>Once you master JavaScript fundamentals and basic server communications here, you'll be fully prepared to step into advanced backend architecture and frameworks.</p>
+                    <p>Once you master JavaScript fundamentals and basic server communications here, you'll be fully
+                        prepared to step into advanced backend architecture and frameworks.</p>
                 </div>
             </div>
         </section>
@@ -540,14 +607,52 @@
         <section class="progress-section">
             <h3>🎯 Ready to Start Learning?</h3>
             <p>
-                Pick up right where you left off or dive straight into Day 01. 
+                Pick up right where you left off or dive straight into Day 01.
                 Build your skills, complete code playgrounds, and master web development one step at a time.
             </p>
         </section>
     </main>
 
-    <footer>
-        Built with dedication and focus by <span>Arslan</span> | Arslan Weblab Learning Hub © <span id="year">2026</span>
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>Arslan<span>.</span></h2>
+                <p>
+                    Learning, building, and turning ideas into reality.
+                    Explore my projects and development journey.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>My Websites</h3>
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" rel="noopener noreferrer">Arslan Weblab
+                    ↗</a>
+                <a href="https://myprojects-hub.netlify.app/" target="_blank" rel="noopener noreferrer">Projects Hub
+                    ↗</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Learning Hub</h3>
+                <a href="#top">Home</a>
+                <a href="#lessons">All Lessons</a>
+                <a href="Day 1/index.html">Day 1</a>
+                <a href="Day 10/index.html">Day 10</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Connect</h3>
+                <a href="https://github.com/arslansahil850-alt/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="currentYear"></span> Arslan. All Rights Reserved.</p>
+            <p>Built with <span class="footer-heart">♥</span> and JavaScript</p>
+        </div>
     </footer>
 
     <script>
