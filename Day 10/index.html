@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Complete Phase 1 backend development revision with JavaScript, Node.js, HTTP, and Express fundamentals.">
+    <title>Phase 1 Revision | Arslan Weblab</title>
+    <link rel="icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="https://arslan-weblab.netlify.app/" target="_blank" class="brand">
+            <img src="logo.webp" alt="Arslan Weblab logo">
+            <span>Arslan <b>Weblab</b></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#roadmap">Revision</a>
+            <a href="#practice">Practice</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#learning">IT Learning</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-btn" type="button">
+                    Days <span>⌄</span>
+                </button>
+
+                <div class="nav-dropdown-menu">
+                    <a href="../Day 1/index.html">Day 01</a>
+                    <a href="../Day 2/index.html">Day 02</a>
+                    <a href="../Day 3/index.html">Day 03</a>
+                    <a href="../Day 4/index.html">Day 04</a>
+                    <a href="../Day 5/index.html">Day 05</a>
+                    <a href="../Day 6/index.html">Day 06</a>
+                    <a href="../Day 7/index.html">Day 07</a>
+                    <a href="../Day 8/index.html">Day 08</a>
+                    <a href="../Day 9/index.html">Day 09</a>
+                    <a href="../Day 10/index.html" class="active">Day 10</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="badge">BACKEND DEVELOPMENT · PHASE 1</span>
+
+                <h1>Understand the basics.<br><span>Build real projects.</span></h1>
+
+                <p>
+                    Ten days of learning, now connected into one complete picture.
+                    Review JavaScript fundamentals, asynchronous programming,
+                    HTTP, Node.js, and Express.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#roadmap" class="btn primary">Start Revision</a>
+                    <a href="#practice" class="btn secondary">Explore Code</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <p class="card-label">YOUR PHASE 1 JOURNEY</p>
+                <div class="progress-circle" id="progressCircle">
+                    <span id="progressPercent">0%</span>
+                </div>
+                <h3 id="progressTitle">Revision in progress</h3>
+                <p id="progressText">Complete the topics as you revise them.</p>
+                <button id="resetProgress" class="text-button">Reset progress</button>
+            </div>
+        </section>
+
+        <section class="section" id="roadmap">
+            <div class="section-heading">
+                <span class="eyebrow">THE COMPLETE PICTURE</span>
+                <h2>Phase 1 Revision Roadmap</h2>
+                <p>Review each concept, understand its purpose, and mark it complete.</p>
+            </div>
+
+            <div class="roadmap-grid">
+
+                <article class="topic-card">
+                    <span class="topic-number">01</span>
+                    <h3>Modern JavaScript</h3>
+                    <p>Template literals, let/const, arrow functions, default parameters, and cleaner syntax.</p>
+                    <pre><code>const name = "Arslan";
+
+const greet = (person = "Developer") => {
+    return `Hello, ${person}!`;
+};
+
+console.log(greet(name));</code></pre>
+                    <p class="concept"><strong>Remember:</strong> Template literals use backticks. Default parameters
+                        provide values when arguments are omitted or undefined.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="1">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">02</span>
+                    <h3>Destructuring, Spread & Rest</h3>
+                    <p>Extract values, copy data, combine arrays, and collect function arguments.</p>
+                    <pre><code>const user = {
+    name: "Arslan",
+    role: "Developer"
+};
+
+const { name, role } = user;
+
+const first = [1, 2];
+const second = [...first, 3];
+
+function total(...numbers) {
+    return numbers.reduce((sum, n) => sum + n, 0);
+}</code></pre>
+                    <p class="concept"><strong>Remember:</strong> Destructuring extracts values. Spread expands values.
+                        Rest collects values.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="2">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">03</span>
+                    <h3>Array Methods</h3>
+                    <p>Transform, filter, search, and calculate data without writing unnecessary loops.</p>
+                    <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(n => n * 2);
+const even = numbers.filter(n => n % 2 === 0);
+const sum = numbers.reduce((total, n) => total + n, 0);
+
+console.log(doubled);
+console.log(even);
+console.log(sum);</code></pre>
+                    <p class="concept"><strong>Remember:</strong> map transforms, filter selects, and reduce combines
+                        values into one result.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="3">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">04</span>
+                    <h3>JavaScript Modules</h3>
+                    <p>Split code into reusable files using exports and imports.</p>
+                    <pre><code>// math.js
+export const add = (a, b) => a + b;
+
+// app.js
+import { add } from "./math.js";
+
+console.log(add(5, 3));</code></pre>
+                    <p class="concept"><strong>Remember:</strong> Export makes functionality available to other modules.
+                        Import brings it into another file.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="4">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">05</span>
+                    <h3>JSON & Fetch API</h3>
+                    <p>Exchange data with APIs and convert JSON responses into JavaScript values.</p>
+                    <pre><code>async function loadUser() {
+    const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users/1"
+    );
+
+    if (!response.ok) {
+        throw new Error("Request failed");
+    }
+
+    const user = await response.json();
+    console.log(user.name);
+}
+
+loadUser().catch(console.error);</code></pre>
+                    <p class="concept"><strong>Remember:</strong> fetch sends a request. response.json() reads and
+                        parses the JSON body. Check response.ok because HTTP errors do not automatically reject fetch.
+                    </p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="5">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">06</span>
+                    <h3>Promises</h3>
+                    <p>Understand operations that finish successfully or fail later.</p>
+                    <pre><code>const task = new Promise((resolve, reject) => {
+    const success = true;
+
+    if (success) {
+        resolve("Task completed");
+    } else {
+        reject(new Error("Task failed"));
+    }
+});
+
+task
+    .then(result => console.log(result))
+    .catch(error => console.error(error));</code></pre>
+                    <p class="concept"><strong>Remember:</strong> A Promise can be pending, fulfilled, or rejected. Use
+                        then for results and catch for failures.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="6">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">07</span>
+                    <h3>Async/Await & Error Handling</h3>
+                    <p>Write asynchronous code in a readable style and handle failures.</p>
+                    <pre><code>async function getData() {
+    try {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/posts/1"
+        );
+
+        if (!response.ok) {
+            throw new Error("Could not load data");
+        }
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+getData();</code></pre>
+                    <p class="concept"><strong>Remember:</strong> await pauses the surrounding async function until a
+                        Promise settles. try/catch handles thrown errors and rejected awaits.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="7">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">08</span>
+                    <h3>HTTP Fundamentals</h3>
+                    <p>Learn how clients and servers communicate through requests and responses.</p>
+                    <pre><code>GET     /users       // Read users
+POST    /users       // Create a user
+PATCH   /users/1     // Update part of a user
+DELETE  /users/1     // Delete a user
+
+// A response contains:
+// Status code, headers, and possibly a body.</code></pre>
+                    <p class="concept"><strong>Remember:</strong> GET reads, POST commonly creates, PATCH partially
+                        updates, and DELETE removes a resource. Status codes describe the result.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="8">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">09</span>
+                    <h3>Node.js & Core Modules</h3>
+                    <p>Run JavaScript outside the browser and use built-in tools to work with files and paths.</p>
+                    <pre><code>// app.js
+const path = require("node:path");
+const fs = require("node:fs");
+
+const filePath = path.join(__dirname, "notes.txt");
+
+fs.writeFileSync(filePath, "Learning Node.js");
+
+const content = fs.readFileSync(filePath, "utf8");
+console.log(content);</code></pre>
+                    <p class="concept"><strong>Remember:</strong> Node.js runs JavaScript outside the browser. fs
+                        handles files, path builds paths safely, and npm manages project packages.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="9">
+                        I understand this
+                    </label>
+                </article>
+
+                <article class="topic-card">
+                    <span class="topic-number">10</span>
+                    <h3>Express & Your First Server</h3>
+                    <p>Use a framework to create routes and respond to HTTP requests.</p>
+                    <pre><code>// First install Express:
+// npm install express
+
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("My backend is running!");
+});
+
+app.get("/api/user", (req, res) => {
+    res.json({ name: "Arslan", role: "Developer" });
+});
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+});</code></pre>
+                    <p class="concept"><strong>Remember:</strong> A route connects an HTTP method and URL to a handler.
+                        req contains request information; res sends the response.</p>
+                    <label class="check-row">
+                        <input type="checkbox" class="topic-check" data-topic="10">
+                        I understand this
+                    </label>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section workflow-section" id="learning">
+            <div class="section-heading">
+                <span class="eyebrow">CONNECT THE CONCEPTS</span>
+                <h2>How Everything Fits Together</h2>
+                <p>Backend development is a chain of connected ideas, not ten unrelated chapters.</p>
+            </div>
+
+            <div class="workflow">
+                <div class="workflow-step">
+                    <span>01</span>
+                    <h3>Client</h3>
+                    <p>A browser sends an HTTP request.</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <span>02</span>
+                    <h3>Server</h3>
+                    <p>Node.js runs your backend code.</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <span>03</span>
+                    <h3>Route</h3>
+                    <p>Express matches the method and URL.</p>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <span>04</span>
+                    <h3>Response</h3>
+                    <p>The server sends data, often as JSON.</p>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <strong>Example:</strong> Your portfolio contact form sends a POST request
+                containing a name, email, and message. An Express route validates the
+                data, processes it, and returns a response. Email delivery can be added
+                after the basic server works.
+            </div>
+        </section>
+
+        <section class="section practice-section" id="practice">
+            <div class="section-heading">
+                <span class="eyebrow">LEARN BY DOING</span>
+                <h2>Small Practice Lab</h2>
+                <p>Run a few JavaScript examples directly in this page. No build tools required.</p>
+            </div>
+
+            <div class="practice-layout">
+                <div class="practice-card">
+                    <h3>1. Transform an array</h3>
+                    <p>Use map to double every number.</p>
+                    <pre><code>const numbers = [2, 4, 6];
+const result = numbers.map(n => n * 2);
+console.log(result);</code></pre>
+                    <button class="btn primary run-example" data-example="array">Run example</button>
+                    <pre class="output" id="arrayOutput">Output appears here.</pre>
+                </div>
+
+                <div class="practice-card">
+                    <h3>2. Use a Promise</h3>
+                    <p>Resolve a Promise and read its result.</p>
+                    <pre><code>Promise.resolve("Learning works!")
+    .then(message => console.log(message));</code></pre>
+                    <button class="btn primary run-example" data-example="promise">Run example</button>
+                    <pre class="output" id="promiseOutput">Output appears here.</pre>
+                </div>
+
+                <div class="practice-card">
+                    <h3>3. Work with objects</h3>
+                    <p>Extract a property with destructuring.</p>
+                    <pre><code>const student = {
+    name: "Arslan",
+    level: "Beginner"
+};
+
+const { name } = student;
+console.log(name);</code></pre>
+                    <button class="btn primary run-example" data-example="object">Run example</button>
+                    <pre class="output" id="objectOutput">Output appears here.</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section checklist-section">
+            <div class="section-heading">
+                <span class="eyebrow">FINAL REVIEW</span>
+                <h2>Before Moving to Phase 2</h2>
+                <p>Use these as learning goals, not a race to click every box.</p>
+            </div>
+
+            <div class="final-list">
+                <label><input type="checkbox" class="goal-check" data-goal="1"> I can explain the difference between
+                    arrays and objects.</label>
+                <label><input type="checkbox" class="goal-check" data-goal="2"> I can use map, filter, and reduce in
+                    simple examples.</label>
+                <label><input type="checkbox" class="goal-check" data-goal="3"> I understand imports, exports, and
+                    reusable modules.</label>
+                <label><input type="checkbox" class="goal-check" data-goal="4"> I can explain Promises, async/await, and
+                    error handling.</label>
+                <label><input type="checkbox" class="goal-check" data-goal="5"> I understand HTTP requests, methods, and
+                    status codes.</label>
+                <label><input type="checkbox" class="goal-check" data-goal="6"> I can describe Node.js, npm, and Express
+                    in my own words.</label>
+                <label><input type="checkbox" class="goal-check" data-goal="7"> I can create a basic Express server and
+                    explain its route.</label>
+            </div>
+
+            <div class="completion-box" id="completionBox">
+                <h3>Phase 1 progress</h3>
+                <p id="completionMessage">Start reviewing the concepts above.</p>
+            </div>
+        </section>
+    </main>
+
+    <section class="revision-gallery" id="revision-gallery">
+        <div class="gallery-header">
+            <span class="section-tag">PHASE 01 · COMPLETE</span>
+            <h2>Download <span>Revision Notes</span></h2>
+            <p>Explore and download the visual revision notes for every day.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="../Day 1/image.webp" alt="Day 1 ES6+ Fundamentals">
+                <div class="gallery-info">
+                    <h3>Day 01</h3>
+                    <p>ES6+ Fundamentals</p>
+                    <a href="images/day-01.png" download="Day-01-ES6-Fundamentals.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 2/image.webp" alt="Day 2 Destructuring Spread Rest">
+                <div class="gallery-info">
+                    <h3>Day 02</h3>
+                    <p>Destructuring, Spread & Rest</p>
+                    <a href="images/day-02.png" download="Day-02-Destructuring.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 3/image.webp" alt="Day 3 Array Methods">
+                <div class="gallery-info">
+                    <h3>Day 03</h3>
+                    <p>Array Methods</p>
+                    <a href="images/day-03.png" download="Day-03-Array-Methods.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 4/image.webp" alt="Day 4 JavaScript Modules">
+                <div class="gallery-info">
+                    <h3>Day 04</h3>
+                    <p>JavaScript Modules</p>
+                    <a href="images/day-04.png" download="Day-04-JS-Modules.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 5/image.webp" alt="Day 5 JSON and Fetch API">
+                <div class="gallery-info">
+                    <h3>Day 05</h3>
+                    <p>JSON & Fetch API</p>
+                    <a href="images/day-05.png" download="Day-05-JSON-Fetch.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 6/image.webp" alt="Day 6 JavaScript Promises">
+                <div class="gallery-info">
+                    <h3>Day 06</h3>
+                    <p>JavaScript Promises</p>
+                    <a href="images/day-06.png" download="Day-06-Promises.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 7/image.webp" alt="Day 7 Async Await and Error Handling">
+                <div class="gallery-info">
+                    <h3>Day 07</h3>
+                    <p>Async/Await & Error Handling</p>
+                    <a href="images/day-07.png" download="Day-07-Async-Await.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 8/iamge.webp" alt="Day 8 HTTP Fundamentals">
+                <div class="gallery-info">
+                    <h3>Day 08</h3>
+                    <p>HTTP Fundamentals</p>
+                    <a href="images/day-08.png" download="Day-08-HTTP.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="../Day 9/image.webp" alt="Day 9 Weather Application">
+                <div class="gallery-info">
+                    <h3>Day 09</h3>
+                    <p>Weather Application</p>
+                    <a href="images/day-09.png" download="Day-09-Weather-App.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="image.webp" alt="Day 10 Complete Revision">
+                <div class="gallery-info">
+                    <h3>Day 10</h3>
+                    <p>Complete Revision</p>
+                    <a href="image.webp" download="Day-10-Complete-Revision.png" class="download-btn">↓ Download Image</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+    <script src="script.js"></script>
+</body>
+
+</html>

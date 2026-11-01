@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d19">
+
+    <title>Day 4 | JavaScript Modules | Arslan Weblab</title>
+
+    <link rel="icon" href="logo.webp">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="https://arslan-weblab.netlify.app/" target="_blank" class="brand">
+            <img src="logo.webp" alt="Arslan Weblab logo" onerror="this.style.display='none'">
+            <span>Arslan <strong>Weblab</strong></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#lessons">Lessons</a>
+            <a href="#playground">Playground</a>
+            <a href="#exercises">Exercises</a>
+            <a href="#quiz">Quiz</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="#it-learning">IT Learning</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-btn" type="button">
+                    Days <span>⌄</span>
+                </button>
+
+                <div class="nav-dropdown-menu">
+                    <a href="../Day 1/index.html">Day 01</a>
+                    <a href="../Day 2/index.html">Day 02</a>
+                    <a href="../Day 3/index.html">Day 03</a>
+                    <a href="../Day 4/index.html" class="active">Day 04</a>
+                    <a href="../Day 5/index.html">Day 05</a>
+                    <a href="../Day 6/index.html">Day 06</a>
+                    <a href="../Day 7/index.html">Day 07</a>
+                    <a href="../Day 8/index.html">Day 08</a>
+                    <a href="../Day 9/index.html">Day 09</a>
+                    <a href="../Day 10/index.html">Day 10</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">BACKEND DEVELOPMENT ROADMAP · DAY 04</span>
+
+                <h1>JavaScript <span>Modules</span><br>Import & Export</h1>
+
+                <p>
+                    Stop putting every function in one giant JavaScript file.
+                    Learn to split code into reusable modules using named exports,
+                    default exports, imports, and aliases.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#lessons" class="btn btn-primary">Start Learning →</a>
+                    <a href="#playground" class="btn btn-secondary">Try Examples</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div><strong>06</strong><span>Core Concepts</span></div>
+                    <div><strong>05</strong><span>Exercises</span></div>
+                    <div><strong>05</strong><span>Quiz Questions</span></div>
+                </div>
+            </div>
+
+            <div class="code-card">
+                <div class="code-header">
+                    <div class="window-dots"><i></i><i></i><i></i></div>
+                    <span>app.js</span>
+                    <span class="live-tag">ES MODULES</span>
+                </div>
+
+                <pre><code><span class="comment">// math.js</span>
+<span class="keyword">export function</span> add(a, b) {
+    <span class="keyword">return</span> a + b;
+}
+
+<span class="comment">// app.js</span>
+<span class="keyword">import</span> { add } <span class="keyword">from</span> <span class="string">"./math.js"</span>;
+
+console.log(add(10, 20));
+<span class="comment">// 30</span></code></pre>
+            </div>
+        </section>
+
+        <section class="section" id="overview">
+            <div class="section-heading">
+                <span class="eyebrow">TODAY'S ROADMAP</span>
+                <h2>What You Will Learn</h2>
+                <p>Understand how JavaScript files share functionality.</p>
+            </div>
+
+            <div class="goal-grid">
+                <article class="goal-card">
+                    <span class="goal-number">01</span>
+                    <h3>Modules</h3>
+                    <p>Understand why projects split code into separate files.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">02</span>
+                    <h3>Named Exports</h3>
+                    <p>Export multiple functions, variables, and classes.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">03</span>
+                    <h3>Default Exports</h3>
+                    <p>Export one main value from a module.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">04</span>
+                    <h3>Import & Aliases</h3>
+                    <p>Import reusable code and rename imported values.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="lessons">
+            <div class="section-heading">
+                <span class="eyebrow">LEARN BY EXAMPLE</span>
+                <h2>JavaScript Module Fundamentals</h2>
+                <p>Study the filenames carefully. Module examples involve more than one file.</p>
+            </div>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">01</span>
+                    <div>
+                        <h3>What Is a JavaScript Module?</h3>
+                        <p>A JavaScript file that can share or use functionality.</p>
+                    </div>
+                </div>
+
+                <p>
+                    A module helps you organize related code into a separate file.
+                    For example, math functions can live in <code>math.js</code>,
+                    while application code lives in <code>app.js</code>.
+                </p>
+
+                <div class="code-example">
+                    <pre><code>project/
+├── index.html
+├── app.js
+└── math.js</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> A module helps organize code.
+                    npm packages and frameworks are different concepts.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">02</span>
+                    <div>
+                        <h3>Named Exports</h3>
+                        <p>Export multiple values from one file.</p>
+                    </div>
+                </div>
+
+                <p>File: <code>math.js</code></p>
+
+                <div class="code-example">
+                    <pre><code>export const pi = 3.14159;
+
+export function add(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b) {
+    return a - b;
+}</code></pre>
+                </div>
+
+                <p>File: <code>app.js</code></p>
+
+                <div class="code-example">
+                    <pre><code>import { pi, add, subtract } from "./math.js";
+
+console.log(pi);
+console.log(add(10, 5));
+console.log(subtract(10, 5));</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> Named imports use the exported names
+                    inside curly braces. The names must match unless you use aliases.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">03</span>
+                    <div>
+                        <h3>Default Export</h3>
+                        <p>Export one main value from a module.</p>
+                    </div>
+                </div>
+
+                <p>File: <code>greeting.js</code></p>
+
+                <div class="code-example">
+                    <pre><code>export default function greet(name) {
+    return `Hello, ${name}!`;
+}</code></pre>
+                </div>
+
+                <p>File: <code>app.js</code></p>
+
+                <div class="code-example">
+                    <pre><code>import greet from "./greeting.js";
+
+console.log(greet("Arslan"));
+// Hello, Arslan!</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> A default import does not need curly
+                    braces. Its local name can differ from the exported function's name.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">04</span>
+                    <div>
+                        <h3>Import Aliases</h3>
+                        <p>Give an imported name a different local name.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>// math.js
+export function multiply(a, b) {
+    return a * b;
+}
+
+// app.js
+import { multiply as multiplyNumbers } from "./math.js";
+
+console.log(multiplyNumbers(4, 5));
+// 20</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> The <code>as</code> keyword changes
+                    the local import name. It does not rename the original export.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">05</span>
+                    <div>
+                        <h3>Import Everything</h3>
+                        <p>Collect named exports under one namespace.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>// math.js
+export const pi = 3.14159;
+
+export function square(number) {
+    return number * number;
+}
+
+// app.js
+import * as math from "./math.js";
+
+console.log(math.pi);
+console.log(math.square(5));</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> Namespace imports collect named
+                    exports under an object-like namespace. A default export is
+                    accessed separately unless explicitly imported into that namespace.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">06</span>
+                    <div>
+                        <h3>Modules in Node.js</h3>
+                        <p>Use ES modules in backend projects.</p>
+                    </div>
+                </div>
+
+                <p>
+                    Node.js supports ES modules. One common approach is to set
+                    <code>"type": "module"</code> in your project's
+                    <code>package.json</code>.
+                </p>
+
+                <div class="code-example">
+                    <pre><code>{
+    "type": "module"
+}</code></pre>
+                </div>
+
+                <p>Then you can use imports and exports in your JavaScript files.</p>
+
+                <div class="code-example">
+                    <pre><code>// server.js
+import { createServer } from "node:http";
+
+const server = createServer((request, response) => {
+    response.end("Arslan Weblab server is running!");
+});
+
+server.listen(3000, () => {
+    console.log("Server running at http://localhost:3000");
+});</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Important:</strong> Node.js can also use CommonJS
+                    with <code>require()</code> and <code>module.exports</code>.
+                    Do not mix module systems without understanding the rules.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">07</span>
+                    <div>
+                        <h3>Named vs Default Exports</h3>
+                        <p>Know which syntax to use.</p>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Named Export</th>
+                                <th>Default Export</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Quantity per file</td>
+                                <td>Multiple</td>
+                                <td>One default</td>
+                            </tr>
+                            <tr>
+                                <td>Import syntax</td>
+                                <td><code>{ add }</code></td>
+                                <td><code>greet</code></td>
+                            </tr>
+                            <tr>
+                                <td>Import name</td>
+                                <td>Must match or use alias</td>
+                                <td>Can be chosen by importer</td>
+                            </tr>
+                            <tr>
+                                <td>Typical use</td>
+                                <td>Several related utilities</td>
+                                <td>Main value or function</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <section class="section" id="playground">
+            <div class="section-heading">
+                <span class="eyebrow">PRACTICAL CODING</span>
+                <h2>Module Logic Playground</h2>
+                <p>Practise the function logic that modules export and import.</p>
+            </div>
+
+            <div class="playground">
+                <div class="editor-header">
+                    <span>module-demo.js</span>
+                    <button class="btn btn-small btn-secondary" id="resetCode">Reset Code</button>
+                </div>
+
+                <label class="sr-only" for="codeEditor">JavaScript code editor</label>
+
+                <textarea id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off">function add(a, b) {
+    return a + b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+const result1 = add(10, 5);
+const result2 = multiply(4, 5);
+
+console.log("Addition:", result1);
+console.log("Multiplication:", result2);</textarea>
+
+                <div class="editor-actions">
+                    <button class="btn btn-primary" id="runCode">▶ Run Code</button>
+                    <span class="small-muted">Runs JavaScript logic in a sandbox.</span>
+                </div>
+
+                <div class="output-heading">
+                    <span>Console Output</span>
+                    <button class="text-button" id="clearOutput">Clear</button>
+                </div>
+
+                <pre id="consoleOutput" class="console-output" aria-live="polite">Your output will appear here.</pre>
+
+                <p class="small-muted security-note">
+                    This playground runs ordinary JavaScript logic. It does not
+                    load separate module files. Real imports need actual files.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="exercises">
+            <div class="section-heading">
+                <span class="eyebrow">PRACTISE YOUR SKILLS</span>
+                <h2>Five Coding Exercises</h2>
+                <p>Attempt each one before revealing the solution.</p>
+            </div>
+
+            <div class="exercise-list">
+                <details class="exercise">
+                    <summary>Exercise 1: Named Export</summary>
+                    <p>Write a function named <code>subtract</code> and export it.</p>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>export function subtract(a, b) {
+    return a - b;
+}</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 2: Named Import</summary>
+                    <p>Import the <code>subtract</code> function from <code>math.js</code>.</p>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>import { subtract } from "./math.js";
+
+console.log(subtract(10, 4));</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 3: Default Export</summary>
+                    <p>Create a default-exported function that greets a user.</p>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>// greeting.js
+export default function greet(name) {
+    return `Welcome, ${name}!`;
+}
+
+// app.js
+import greet from "./greeting.js";
+
+console.log(greet("Arslan"));</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 4: Import Alias</summary>
+                    <p>Import a named function called <code>multiply</code> under the name <code>product</code>.</p>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>import { multiply as product } from "./math.js";
+
+console.log(product(3, 4));</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 5: Mini Project, Utility Module</summary>
+                    <p>Create a math utility module with two named exports.</p>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>// math.js
+export function add(a, b) {
+    return a + b;
+}
+
+export function square(number) {
+    return number * number;
+}
+
+// app.js
+import { add, square } from "./math.js";
+
+console.log(add(5, 3));
+console.log(square(4));</code></pre>
+                </details>
+            </div>
+        </section>
+
+        <section class="section" id="quiz">
+            <div class="section-heading">
+                <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+                <h2>Day 4 Quiz</h2>
+                <p>Choose one answer per question.</p>
+            </div>
+
+            <form id="quizForm" class="quiz-form">
+                <fieldset class="question">
+                    <legend>1. Which keyword exports a named function?</legend>
+                    <label><input type="radio" name="q1" value="a"> share</label>
+                    <label><input type="radio" name="q1" value="b"> export</label>
+                    <label><input type="radio" name="q1" value="c"> publish</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>2. How do you import a named export called add?</legend>
+                    <label><input type="radio" name="q2" value="a"> import add from "./math.js"</label>
+                    <label><input type="radio" name="q2" value="b"> include { add } from "./math.js"</label>
+                    <label><input type="radio" name="q2" value="c"> import { add } from "./math.js"</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>3. How many default exports can a module have?</legend>
+                    <label><input type="radio" name="q3" value="a"> One</label>
+                    <label><input type="radio" name="q3" value="b"> Unlimited</label>
+                    <label><input type="radio" name="q3" value="c"> None</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>4. What does the <code>as</code> keyword do in a named import?</legend>
+                    <label><input type="radio" name="q4" value="a"> Deletes the export</label>
+                    <label><input type="radio" name="q4" value="b"> Renames the local import</label>
+                    <label><input type="radio" name="q4" value="c"> Runs the function automatically</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>5. What is a common way to enable ES modules in a Node.js project?</legend>
+                    <label><input type="radio" name="q5" value="a"> Add <code>"type": "module"</code> to package.json</label>
+                    <label><input type="radio" name="q5" value="b"> Rename every file to .html</label>
+                    <label><input type="radio" name="q5" value="c"> Delete package.json</label>
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary">Check My Answers</button>
+                <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <section class="section">
+            <div class="completion-card">
+                <span class="eyebrow">DAY 4 CHECKLIST</span>
+                <h2>Track Your Progress</h2>
+                <p>Tick each item when you understand it.</p>
+
+                <label><input type="checkbox" class="progress-check"> I understand what JavaScript modules are.</label>
+                <label><input type="checkbox" class="progress-check"> I can write named exports and imports.</label>
+                <label><input type="checkbox" class="progress-check"> I understand default exports.</label>
+                <label><input type="checkbox" class="progress-check"> I can use aliases and namespace imports.</label>
+                <label><input type="checkbox" class="progress-check"> I understand ES modules in Node.js.</label>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">0 of 5 completed</p>
+            </div>
+        </section>
+    </main>
+
+    <section class="revision-download">
+        <div class="download-card">
+            <img src="image.webp" alt="JavaScript Day 4 Revision">
+
+            <div class="download-content">
+                <h3>Day 04 Revision</h3>
+                <p>Download the complete revision image.</p>
+                <a href="image.webp" download="Day-04-Revision.png">
+                    ↓ Download Image
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+</body>
+
+</html>

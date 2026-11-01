@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn JavaScript Async/Await, try-catch, and error handling with Arslan Weblab.">
+    <title>Day 7 | Async/Await & Error Handling | Arslan Weblab</title>
+    <link rel="icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="https://arslan-weblab.netlify.app/" target="_blank" class="brand">
+            <img src="logo.webp" alt="Arslan Weblab Logo">
+            <span>Arslan <b>Weblab</b></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <nav id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#lessons">Lessons</a>
+            <a href="#playground">Playground</a>
+            <a href="#practice">Practice</a>
+            <a href="#quiz">Quiz</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="#it-learning">IT Learning</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-btn" type="button">
+                    Days <span>⌄</span>
+                </button>
+
+                <div class="nav-dropdown-menu">
+                    <a href="../Day 1/index.html">Day 01</a>
+                    <a href="../Day 2/index.html">Day 02</a>
+                    <a href="../Day 3/index.html">Day 03</a>
+                    <a href="../Day 4/index.html">Day 04</a>
+                    <a href="../Day 5/index.html">Day 05</a>
+                    <a href="../Day 6/index.html">Day 06</a>
+                    <a href="../Day 7/index.html" class="active">Day 07</a>
+                    <a href="../Day 8/index.html">Day 08</a>
+                    <a href="../Day 9/index.html">Day 09</a>
+                    <a href="../Day 10/index.html">Day 10</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="badge">PHASE 1 · DAY 7</span>
+                <h1>Async/Await & <span>Error Handling</span></h1>
+                <p>
+                    Learn to write asynchronous JavaScript that is easier to read,
+                    understand, and debug.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#lessons" class="btn primary">Start Learning</a>
+                    <a href="#playground" class="btn secondary">Try Examples</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div><strong>5</strong><span>Core Concepts</span></div>
+                    <div><strong>5</strong><span>Quiz Questions</span></div>
+                    <div><strong>4</strong><span>Exercises</span></div>
+                </div>
+            </div>
+
+            <div class="code-card">
+                <div class="code-header">
+                    <span class="dots">● ● ●</span>
+                    <span>async-example.js</span>
+                </div>
+                <pre><code>async function getData() {
+    try {
+        const result = await fetchData();
+        console.log(result);
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+getData();</code></pre>
+                <p class="code-note">Readable asynchronous code. Fewer callback headaches.</p>
+            </div>
+        </section>
+
+        <section class="section" id="lessons">
+            <div class="section-heading">
+                <span class="eyebrow">THE LESSONS</span>
+                <h2>Understand the fundamentals</h2>
+                <p>Learn each concept before moving to the playground.</p>
+            </div>
+
+            <div class="lesson-grid">
+                <article class="lesson-card">
+                    <span class="lesson-number">01</span>
+                    <h3>What is Async?</h3>
+                    <p>
+                        Asynchronous operations let JavaScript handle tasks that
+                        take time without making your code wait in a blocking way.
+                    </p>
+                    <pre><code>console.log("First");
+
+setTimeout(() => {
+    console.log("Later");
+}, 1000);
+
+console.log("Second");</code></pre>
+                    <div class="result">
+                        Output: First → Second → Later
+                    </div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">02</span>
+                    <h3>Async Functions</h3>
+                    <p>
+                        The <code>async</code> keyword declares an asynchronous
+                        function. Calling it always returns a Promise.
+                    </p>
+                    <pre><code>async function greet() {
+    return "Hello Developer";
+}
+
+greet().then(console.log);</code></pre>
+                    <div class="result">
+                        Output: Hello Developer
+                    </div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">03</span>
+                    <h3>Await Keyword</h3>
+                    <p>
+                        <code>await</code> pauses the surrounding async function
+                        until a Promise settles. It does not block the entire
+                        JavaScript application.
+                    </p>
+                    <pre><code>const promise = Promise.resolve(100);
+
+async function showValue() {
+    const value = await promise;
+    console.log(value);
+}
+
+showValue();</code></pre>
+                    <div class="result">
+                        Output: 100
+                    </div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">04</span>
+                    <h3>Try & Catch</h3>
+                    <p>
+                        Use <code>try</code> for code that may fail and
+                        <code>catch</code> to handle a thrown error or a rejected
+                        Promise awaited inside the block.
+                    </p>
+                    <pre><code>try {
+    throw new Error("Something failed");
+} catch (error) {
+    console.log(error.message);
+}</code></pre>
+                    <div class="result">
+                        Output: Something failed
+                    </div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">05</span>
+                    <h3>Finally</h3>
+                    <p>
+                        The <code>finally</code> block runs after try/catch,
+                        whether the operation succeeds or fails. It is useful
+                        for cleanup and ending loading indicators.
+                    </p>
+                    <pre><code>try {
+    console.log("Working");
+} catch (error) {
+    console.log("Failed");
+} finally {
+    console.log("Finished");
+}</code></pre>
+                    <div class="result">
+                        Output: Working → Finished
+                    </div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">06</span>
+                    <h3>Throw Your Own Error</h3>
+                    <p>
+                        Use <code>throw new Error()</code> when your code detects
+                        a problem that should be handled by a catch block.
+                    </p>
+                    <pre><code>function checkAge(age) {
+    if (age < 0) {
+        throw new Error("Invalid age");
+    }
+
+    return "Age accepted";
+}</code></pre>
+                    <div class="result">
+                        Invalid input produces an error.
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section concept-section">
+            <div class="section-heading">
+                <span class="eyebrow">HOW IT WORKS</span>
+                <h2>The async/await flow</h2>
+            </div>
+
+            <div class="flow">
+                <div class="flow-step">
+                    <strong>1</strong>
+                    <h3>Call async function</h3>
+                    <p>Start the asynchronous operation.</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <strong>2</strong>
+                    <h3>Await Promise</h3>
+                    <p>Wait for its result inside the function.</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <strong>3</strong>
+                    <h3>Handle result</h3>
+                    <p>Continue or catch an error.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>Important distinction</h3>
+                <p>
+                    <code>async/await</code> does not replace Promises.
+                    It provides a cleaner way to work with them. A rejected Promise
+                    awaited inside a try block can be handled by catch.
+                </p>
+            </div>
+        </section>
+
+        <section class="section playground-section" id="playground">
+            <div class="section-heading">
+                <span class="eyebrow">INTERACTIVE LEARNING</span>
+                <h2>Async/Await Playground</h2>
+                <p>Select an example and run it to see the output.</p>
+            </div>
+
+            <div class="playground">
+                <div class="playground-controls">
+                    <label for="exampleSelect">Choose an example</label>
+                    <select id="exampleSelect">
+                        <option value="success">Successful async function</option>
+                        <option value="await">Using await</option>
+                        <option value="error">Handling an error</option>
+                        <option value="finally">Using finally</option>
+                        <option value="delay">Simulated delayed request</option>
+                    </select>
+
+                    <button class="btn primary full-width" id="runExample">
+                        ▶ Run Example
+                    </button>
+                    <button class="btn secondary full-width" id="clearOutput">
+                        Clear Output
+                    </button>
+                </div>
+
+                <div class="output-panel">
+                    <div class="output-heading">
+                        <span>Console Output</span>
+                        <span class="status-dot"></span>
+                    </div>
+                    <pre id="output" aria-live="polite">Select an example and click Run Example.</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="practice">
+            <div class="section-heading">
+                <span class="eyebrow">YOUR TURN</span>
+                <h2>Practice exercises</h2>
+                <p>Try to solve each exercise before revealing its solution.</p>
+            </div>
+
+            <div class="exercise-list">
+                <article class="exercise">
+                    <h3>Exercise 1: Create an async function</h3>
+                    <p>Create an async function named <code>getName()</code> that returns your name.</p>
+                    <button class="reveal-btn" data-answer="answer1">Reveal Solution</button>
+                    <pre class="answer hidden" id="answer1"><code>async function getName() {
+    return "Developer";
+}
+
+getName().then(console.log);</code></pre>
+                </article>
+
+                <article class="exercise">
+                    <h3>Exercise 2: Use await</h3>
+                    <p>Await <code>Promise.resolve(50)</code> inside an async function and print the result.</p>
+                    <button class="reveal-btn" data-answer="answer2">Reveal Solution</button>
+                    <pre class="answer hidden" id="answer2"><code>async function showNumber() {
+    const number = await Promise.resolve(50);
+    console.log(number);
+}
+
+showNumber();</code></pre>
+                </article>
+
+                <article class="exercise">
+                    <h3>Exercise 3: Catch an error</h3>
+                    <p>Throw an error inside try and print its message inside catch.</p>
+                    <button class="reveal-btn" data-answer="answer3">Reveal Solution</button>
+                    <pre class="answer hidden" id="answer3"><code>try {
+    throw new Error("Practice error");
+} catch (error) {
+    console.log(error.message);
+}</code></pre>
+                </article>
+
+                <article class="exercise">
+                    <h3>Exercise 4: Simulate a request</h3>
+                    <p>Create an async function that waits for a Promise and then prints "Data received".</p>
+                    <button class="reveal-btn" data-answer="answer4">Reveal Solution</button>
+                    <pre class="answer hidden" id="answer4"><code>const wait = ms =>
+    new Promise(resolve => setTimeout(resolve, ms));
+
+async function loadData() {
+    await wait(1000);
+    console.log("Data received");
+}
+
+loadData();</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <section class="section quiz-section" id="quiz">
+            <div class="section-heading">
+                <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+                <h2>Day 7 Quiz</h2>
+                <p>Choose one answer for each question.</p>
+            </div>
+
+            <form id="quizForm">
+                <fieldset class="question">
+                    <legend>1. What does an async function always return?</legend>
+                    <label><input type="radio" name="q1" value="a"> A string directly</label>
+                    <label><input type="radio" name="q1" value="b"> A Promise</label>
+                    <label><input type="radio" name="q1" value="c"> An array</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>2. Where can you normally use await in beginner JavaScript?</legend>
+                    <label><input type="radio" name="q2" value="a"> Inside an async function</label>
+                    <label><input type="radio" name="q2" value="b"> Only inside a loop</label>
+                    <label><input type="radio" name="q2" value="c"> Only inside catch</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>3. Which block handles an error thrown in try?</legend>
+                    <label><input type="radio" name="q3" value="a"> then</label>
+                    <label><input type="radio" name="q3" value="b"> finally</label>
+                    <label><input type="radio" name="q3" value="c"> catch</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>4. What is the purpose of finally?</legend>
+                    <label><input type="radio" name="q4" value="a"> It only runs on success</label>
+                    <label><input type="radio" name="q4" value="b"> It runs after try/catch whether success or failure</label>
+                    <label><input type="radio" name="q4" value="c"> It creates a Promise</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>5. What happens when an awaited Promise rejects inside try?</legend>
+                    <label><input type="radio" name="q5" value="a"> The rejection can be caught by catch</label>
+                    <label><input type="radio" name="q5" value="b"> It always becomes zero</label>
+                    <label><input type="radio" name="q5" value="c"> JavaScript ignores it</label>
+                </fieldset>
+
+                <button type="submit" class="btn primary">Check Answers</button>
+                <button type="button" class="btn secondary" id="resetQuiz">Reset Quiz</button>
+            </form>
+
+            <div id="quizResult" class="quiz-result hidden" aria-live="polite"></div>
+        </section>
+
+        <section class="section progress-section">
+            <div class="section-heading">
+                <span class="eyebrow">TRACK YOUR LEARNING</span>
+                <h2>Day 7 Progress</h2>
+                <p>Mark each topic after you understand it.</p>
+            </div>
+
+            <div class="progress-card">
+                <div class="progress-top">
+                    <span>Completion</span>
+                    <strong id="progressText">0%</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+                <div class="checklist">
+                    <label><input type="checkbox" class="progress-check" data-key="async"> Understand async functions</label>
+                    <label><input type="checkbox" class="progress-check" data-key="await"> Understand await</label>
+                    <label><input type="checkbox" class="progress-check" data-key="trycatch"> Understand try/catch</label>
+                    <label><input type="checkbox" class="progress-check" data-key="finally"> Understand finally and throw</label>
+                    <label><input type="checkbox" class="progress-check" data-key="practice"> Complete the exercises</label>
+                    <label><input type="checkbox" class="progress-check" data-key="quiz"> Complete the quiz</label>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="revision-download">
+        <div class="download-card">
+            <img src="image.webp" alt="JavaScript Day 7 Revision">
+
+            <div class="download-content">
+                <h3>Day 07 Revision</h3>
+                <p>Download the complete revision image.</p>
+                <a href="image.webp" download="Day-07-Revision.png">
+                    ↓ Download Image
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <!-- Learning -->
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+</body>
+
+</html>

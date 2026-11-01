@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learn JavaScript ES6+ fundamentals with Arslan Weblab. Practice variables, arrow functions, template literals, and default parameters.">
+
+    <meta name="theme-color" content="#0b1020">
+
+    <title>Day 1: JavaScript ES6+ | Arslan Weblab</title>
+
+    <link rel="icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+
+            <a href="#" class="brand">
+                <img src="logo.webp" class="brand-logo" alt="Logo">
+                <span>Arslan <strong>Weblab</strong></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+
+                <a href="#lessons">Lessons</a>
+                <a href="#playground">Playground</a>
+                <a href="#practice">Practice</a>
+                <a href="#quiz">Quiz</a>
+
+                <a href="#" class="nav-github">GitHub ↗</a>
+                
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn" type="button">
+                        Days <span>⌄</span>
+                    </button>
+
+                    <div class="nav-dropdown-menu">
+                        <a href="../Day 1/index.html" class="active">Day 1</a>
+                        <a href="../Day 2/index.html">Day 2</a>
+                        <a href="../Day 3/index.html">Day 3</a>
+                        <a href="../Day 4/index.html">Day 4</a>
+                        <a href="../Day 5/index.html">Day 5</a>
+                        <a href="../Day 6/index.html">Day 6</a>
+                        <a href="../Day 7/index.html">Day 7</a>
+                        <a href="../Day 8/index.html">Day 8</a>
+                        <a href="../Day 9/index.html">Day 9</a>
+                        <a href="../Day 10/index.html">Day 10</a>
+                    </div>
+                </div>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero section-padding">
+
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        JAVASCRIPT COURSE · DAY 01
+                    </span>
+
+                    <h1>
+                        Master the
+                        <span class="gradient-text">Modern JavaScript</span>
+                        Fundamentals
+                    </h1>
+
+                    <p class="hero-description">
+                        Start your JavaScript journey with variables,
+                        arrow functions, template literals, and default
+                        parameters. Learn the concepts, test the code,
+                        and build your first developer profile.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#lesson" class="button button-primary">
+                            Start Learning →
+                        </a>
+
+                        <a href="#playground" class="button button-secondary">
+                            Try the Code
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>04</strong>
+                            <span>Core Topics</span>
+                        </div>
+
+                        <div>
+                            <strong>05</strong>
+                            <span>Exercises</span>
+                        </div>
+
+                        <div>
+                            <strong>01</strong>
+                            <span>Mini Project</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-code card">
+
+                    <div class="code-header">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span>day1.js</span>
+
+                    </div>
+
+                    <pre><code><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"Arslan"</span>,
+  skill: <span class="code-green">"JavaScript"</span>,
+  level: <span class="code-green">"Beginner"</span>
+};
+
+<span class="code-purple">const</span> greet = (name = <span class="code-green">"Developer"</span>) =&gt;
+  <span class="code-green">`Hello, ${name}!`</span>;
+
+console.log(greet(developer.name));</code></pre>
+
+                    <div class="code-result">
+                        <span class="result-dot"></span>
+                        Hello, Arslan!
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEARNING ROADMAP ================= -->
+
+        <section class="roadmap section-padding">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">YOUR LEARNING PATH</span>
+
+                    <h2>Today's Learning Roadmap</h2>
+
+                    <p>
+                        Understand each concept before combining them.
+                    </p>
+
+                </div>
+
+                <div class="roadmap-grid">
+
+                    <a href="#variables" class="roadmap-card card">
+                        <span class="roadmap-number">01</span>
+                        <h3>Variables</h3>
+                        <p>Understand var, let, and const.</p>
+                        <span class="topic-tag">Fundamentals</span>
+                    </a>
+
+                    <a href="#arrow-functions" class="roadmap-card card">
+                        <span class="roadmap-number">02</span>
+                        <h3>Arrow Functions</h3>
+                        <p>Write shorter, modern functions.</p>
+                        <span class="topic-tag">Functions</span>
+                    </a>
+
+                    <a href="#templates" class="roadmap-card card">
+                        <span class="roadmap-number">03</span>
+                        <h3>Template Literals</h3>
+                        <p>Insert variables into strings.</p>
+                        <span class="topic-tag">Strings</span>
+                    </a>
+
+                    <a href="#defaults" class="roadmap-card card">
+                        <span class="roadmap-number">04</span>
+                        <h3>Default Parameters</h3>
+                        <p>Provide fallback parameter values.</p>
+                        <span class="topic-tag">Parameters</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LESSONS ================= -->
+
+        <section class="lessons section-padding" id="lessons">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">LEARN THE BASICS</span>
+
+                    <h2>Day 1: Core Concepts</h2>
+
+                    <p>
+                        Read the explanation, inspect the code, and
+                        understand the output.
+                    </p>
+
+                </div>
+
+
+                <!-- LESSON 1 -->
+
+                <article class="lesson-card card" id="variables">
+
+                    <div class="lesson-title">
+
+                        <span class="lesson-number">01</span>
+
+                        <div>
+                            <h3>Variables: var, let, and const</h3>
+                            <p>Store and manage values in JavaScript.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="lesson-body">
+
+                        <div class="explanation">
+
+                            <h4>What is a variable?</h4>
+
+                            <p>
+                                A variable is a named reference used to
+                                store a value that your program can use.
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <code>var</code> is function-scoped
+                                    and can be redeclared.
+                                </li>
+
+                                <li>
+                                    <code>let</code> is block-scoped
+                                    and allows reassignment.
+                                </li>
+
+                                <li>
+                                    <code>const</code> is block-scoped
+                                    and prevents reassignment.
+                                </li>
+                            </ul>
+
+                            <div class="note">
+                                <strong>Remember:</strong>
+                                Prefer <code>const</code> by default.
+                                Use <code>let</code> when reassignment
+                                is needed.
+                            </div>
+
+                            <p>
+                                A <code>const</code> object can still
+                                have its properties changed. The
+                                variable binding, not the entire object,
+                                is protected from reassignment.
+                            </p>
+
+                        </div>
+
+                        <div class="code-panel">
+
+                            <div class="code-panel-header">
+                                <span>variables.js</span>
+                                <button class="copy-button" type="button" data-copy="variablesCode">
+                                    Copy
+                                </button>
+                            </div>
+
+                            <pre><code id="variablesCode">let score = 10;
+score = 20;
+
+const username = "Arslan";
+
+const user = {
+    name: "Arslan"
+};
+
+user.name = "Sahil";
+
+console.log(score);
+console.log(username);
+console.log(user.name);</code></pre>
+
+                            <div class="output-box">
+                                <span>OUTPUT</span>
+                                <pre>20
+Arslan
+Sahil</pre>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LESSON 2 -->
+
+                <article class="lesson-card card" id="arrow-functions">
+
+                    <div class="lesson-title">
+
+                        <span class="lesson-number">02</span>
+
+                        <div>
+                            <h3>Arrow Functions</h3>
+                            <p>Write concise function expressions.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="lesson-body">
+
+                        <div class="explanation">
+
+                            <h4>What is an arrow function?</h4>
+
+                            <p>
+                                An arrow function is a shorter syntax
+                                for writing a function expression.
+                            </p>
+
+                            <p>
+                                When the function body contains a single
+                                expression, you can omit the braces and
+                                the explicit <code>return</code>.
+                            </p>
+
+                            <div class="note">
+                                Arrow functions do not have their own
+                                <code>this</code> binding.
+                            </div>
+
+                        </div>
+
+                        <div class="code-panel">
+
+                            <div class="code-panel-header">
+                                <span>functions.js</span>
+                                <button class="copy-button" type="button" data-copy="functionsCode">
+                                    Copy
+                                </button>
+                            </div>
+
+                            <pre><code id="functionsCode">function add(a, b) {
+    return a + b;
+}
+
+const multiply = (a, b) => a * b;
+
+const square = n => n * n;
+
+console.log(add(5, 3));
+console.log(multiply(4, 2));
+console.log(square(6));</code></pre>
+
+                            <div class="output-box">
+                                <span>OUTPUT</span>
+                                <pre>8
+8
+36</pre>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LESSON 3 -->
+
+                <article class="lesson-card card" id="templates">
+
+                    <div class="lesson-title">
+
+                        <span class="lesson-number">03</span>
+
+                        <div>
+                            <h3>Template Literals</h3>
+                            <p>Build readable strings using variables.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="lesson-body">
+
+                        <div class="explanation">
+
+                            <h4>Why use template literals?</h4>
+
+                            <p>
+                                Template literals use backticks instead
+                                of ordinary quotation marks. They allow
+                                variables and expressions to be inserted
+                                using <code>${...}</code>.
+                            </p>
+
+                            <p>
+                                They also support multiline strings.
+                            </p>
+
+                        </div>
+
+                        <div class="code-panel">
+
+                            <div class="code-panel-header">
+                                <span>templates.js</span>
+                                <button class="copy-button" type="button" data-copy="templatesCode">
+                                    Copy
+                                </button>
+                            </div>
+
+                            <pre><code id="templatesCode">const name = "Arslan";
+const skill = "JavaScript";
+
+const message =
+    `My name is ${name} and I am learning ${skill}.`;
+
+console.log(message);</code></pre>
+
+                            <div class="output-box">
+                                <span>OUTPUT</span>
+                                <pre>My name is Arslan and I am learning JavaScript.</pre>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- LESSON 4 -->
+
+                <article class="lesson-card card" id="defaults">
+
+                    <div class="lesson-title">
+
+                        <span class="lesson-number">04</span>
+
+                        <div>
+                            <h3>Default Parameters</h3>
+                            <p>Give parameters fallback values.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="lesson-body">
+
+                        <div class="explanation">
+
+                            <h4>How do default parameters work?</h4>
+
+                            <p>
+                                A default parameter provides a value
+                                when an argument is omitted or explicitly
+                                passed as <code>undefined</code>.
+                            </p>
+
+                            <p>
+                                Passing <code>null</code> does not trigger
+                                the default value.
+                            </p>
+
+                        </div>
+
+                        <div class="code-panel">
+
+                            <div class="code-panel-header">
+                                <span>defaults.js</span>
+                                <button class="copy-button" type="button" data-copy="defaultsCode">
+                                    Copy
+                                </button>
+                            </div>
+
+                            <pre><code id="defaultsCode">function greet(name = "Developer") {
+    return `Hello, ${name}!`;
+}
+
+console.log(greet("Arslan"));
+console.log(greet());
+console.log(greet(undefined));
+console.log(greet(null));</code></pre>
+
+                            <div class="output-box">
+                                <span>OUTPUT</span>
+                                <pre>Hello, Arslan!
+Hello, Developer!
+Hello, Developer!
+Hello, null!</pre>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PLAYGROUND ================= -->
+
+        <section class="playground section-padding" id="playground">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">INTERACTIVE PRACTICE</span>
+
+                    <h2>Your JavaScript Playground</h2>
+
+                    <p>
+                        Change the values and run the code. No need to
+                        guess what the program does.
+                    </p>
+
+                </div>
+
+                <div class="playground-card card">
+
+                    <div class="playground-header">
+
+                        <div>
+                            <span class="live-dot"></span>
+                            <strong>Live JavaScript Editor</strong>
+                        </div>
+
+                        <button type="button" class="button button-primary run-button" id="runCode">
+                            ▶ Run Code
+                        </button>
+
+                    </div>
+
+                    <label for="codeEditor" class="editor-label">
+                        Write your JavaScript here
+                    </label>
+
+                    <textarea id="codeEditor" spellcheck="false" aria-label="JavaScript code editor">const name = "Arslan";
+const skill = "JavaScript";
+
+const greet = (person = "Developer") =>
+    `Hello, ${person}!`;
+
+console.log(greet(name));
+console.log(`I am learning ${skill}.`);</textarea>
+
+                    <div class="console-header">
+                        <span>CONSOLE OUTPUT</span>
+
+                        <button type="button" class="text-button" id="clearConsole">
+                            Clear
+                        </button>
+                    </div>
+
+                    <pre id="consoleOutput" class="console-output"
+                        aria-live="polite">Your output will appear here.</pre>
+
+                    <p class="editor-hint">
+                        Tip: use <code>console.log()</code> to display
+                        results. This beginner playground runs your code
+                        in an isolated iframe.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRACTICE ================= -->
+
+        <section class="practice section-padding" id="practice">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">PRACTICE MAKES PROGRESS</span>
+
+                    <h2>Five Practice Exercises</h2>
+
+                    <p>
+                        Try solving each exercise before looking at
+                        the lesson examples again.
+                    </p>
+
+                </div>
+
+                <div class="exercise-grid">
+
+                    <article class="exercise-card card">
+                        <span class="exercise-number">EXERCISE 01</span>
+                        <h3>Variables</h3>
+                        <p>
+                            Create a variable named
+                            <code>age</code> using <code>let</code>.
+                            Assign it a number, then update its value.
+                        </p>
+                    </article>
+
+                    <article class="exercise-card card">
+                        <span class="exercise-number">EXERCISE 02</span>
+                        <h3>Arrow Functions</h3>
+                        <p>
+                            Create an arrow function named
+                            <code>cube</code> that returns the cube
+                            of a number.
+                        </p>
+                    </article>
+
+                    <article class="exercise-card card">
+                        <span class="exercise-number">EXERCISE 03</span>
+                        <h3>Template Literals</h3>
+                        <p>
+                            Store your name and favorite programming
+                            language in variables. Print both in one
+                            sentence using backticks.
+                        </p>
+                    </article>
+
+                    <article class="exercise-card card">
+                        <span class="exercise-number">EXERCISE 04</span>
+                        <h3>Default Parameters</h3>
+                        <p>
+                            Create a function named
+                            <code>welcome</code> that uses
+                            <code>"Guest"</code> as its default name.
+                        </p>
+                    </article>
+
+                    <article class="exercise-card card exercise-wide">
+                        <span class="exercise-number">EXERCISE 05</span>
+                        <h3>Developer Profile</h3>
+                        <p>
+                            Combine all four concepts to create a
+                            developer profile containing a name, skill,
+                            experience level, and a greeting function.
+                            Print the final profile to the console.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUIZ ================= -->
+
+        <section class="quiz section-padding" id="quiz">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">TEST YOUR UNDERSTANDING</span>
+
+                    <h2>Day 1 Knowledge Quiz</h2>
+
+                    <p>
+                        Five questions. Choose one answer for each.
+                    </p>
+
+                </div>
+
+                <form id="quizForm" class="quiz-card card">
+
+                    <fieldset class="question">
+
+                        <legend>
+                            1. Which declaration allows reassignment
+                            and is block-scoped?
+                        </legend>
+
+                        <label>
+                            <input type="radio" name="q1" value="a">
+                            <span>var</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q1" value="b">
+                            <span>let</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q1" value="c">
+                            <span>const</span>
+                        </label>
+
+                    </fieldset>
+
+
+                    <fieldset class="question">
+
+                        <legend>
+                            2. What does this expression return?
+                            <code>(n) =&gt; n * 2</code>
+                        </legend>
+
+                        <label>
+                            <input type="radio" name="q2" value="a">
+                            <span>It doubles its argument.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q2" value="b">
+                            <span>It always returns 2.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q2" value="c">
+                            <span>It creates an array.</span>
+                        </label>
+
+                    </fieldset>
+
+
+                    <fieldset class="question">
+
+                        <legend>
+                            3. Which characters mark a template literal?
+                        </legend>
+
+                        <label>
+                            <input type="radio" name="q3" value="a">
+                            <span>Single quotes: ' '</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q3" value="b">
+                            <span>Double quotes: " "</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q3" value="c">
+                            <span>Backticks: ` `</span>
+                        </label>
+
+                    </fieldset>
+
+
+                    <fieldset class="question">
+
+                        <legend>
+                            4. When is a default parameter used?
+                        </legend>
+
+                        <label>
+                            <input type="radio" name="q4" value="a">
+                            <span>Whenever any argument is passed.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q4" value="b">
+                            <span>When the argument is omitted or undefined.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q4" value="c">
+                            <span>Only when the argument is null.</span>
+                        </label>
+
+                    </fieldset>
+
+
+                    <fieldset class="question">
+
+                        <legend>
+                            5. Can a property of an object declared
+                            with const be changed?
+                        </legend>
+
+                        <label>
+                            <input type="radio" name="q5" value="a">
+                            <span>Yes, its properties can be changed.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q5" value="b">
+                            <span>No, nothing about the object can change.</span>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="q5" value="c">
+                            <span>Only strings can be changed.</span>
+                        </label>
+
+                    </fieldset>
+
+
+                    <button type="submit" class="button button-primary quiz-submit">
+                        Check My Answers
+                    </button>
+
+                    <div id="quizResult" class="quiz-result" aria-live="polite"></div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COMPLETION ================= -->
+
+        <section class="completion section-padding">
+
+            <div class="container">
+
+                <div class="completion-card">
+
+                    <span class="eyebrow">DAY 01 CHECKLIST</span>
+
+                    <h2>Ready for the Next Lesson?</h2>
+
+                    <p>
+                        Make sure you understand each topic before
+                        continuing to Day 2.
+                    </p>
+
+                    <div class="checklist">
+
+                        <label>
+                            <input type="checkbox">
+                            <span>I understand let, const, and var.</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            <span>I can write arrow functions.</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            <span>I can use template literals.</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            <span>I understand default parameters.</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            <span>I completed the practice exercises.</span>
+                        </label>
+
+                        <label>
+                            <input type="checkbox">
+                            <span>I attempted the knowledge quiz.</span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <section class="revision-download">
+        <div class="download-card">
+            <img src="image.webp" alt="JavaScript Day 1 Revision">
+
+            <div class="download-content">
+                <h3>Day 01 Revision</h3>
+                <p>Download the complete revision image.</p>
+                <a href="image.webp" download="Day-01-Revision.png">
+                    ↓ Download Image
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <!-- Learning -->
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

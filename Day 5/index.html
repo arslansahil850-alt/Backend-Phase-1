@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn JSON, Fetch API, HTTP responses, and asynchronous data fetching with JavaScript.">
+    <title>Day 5 | JSON & Fetch API | Arslan Weblab</title>
+
+    <link rel="icon" href="logo.webp">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="https://arslan-weblab.netlify.app/" target="_blank" class="brand">
+            <img src="logo.webp" alt="Arslan Weblab logo">
+            <span>Arslan <b>Weblab</b></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#json">JSON</a>
+            <a href="#fetch">Fetch API</a>
+            <a href="#practice">Practice</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-btn" type="button">
+                    Days <span>⌄</span>
+                </button>
+
+                <div class="nav-dropdown-menu">
+                    <a href="../Day 1/index.html">Day 01</a>
+                    <a href="../Day 2/index.html">Day 02</a>
+                    <a href="../Day 3/index.html">Day 03</a>
+                    <a href="../Day 4/index.html">Day 04</a>
+                    <a href="../Day 5/index.html" class="active">Day 05</a>
+                    <a href="../Day 6/index.html">Day 06</a>
+                    <a href="../Day 7/index.html">Day 07</a>
+                    <a href="../Day 8/index.html">Day 08</a>
+                    <a href="../Day 9/index.html">Day 09</a>
+                    <a href="../Day 10/index.html">Day 10</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="badge">PHASE 1 · DAY 5</span>
+
+                <h1>JSON & <span>Fetch API</span></h1>
+
+                <p>
+                    Learn how JavaScript sends requests to APIs, receives data,
+                    converts JSON into JavaScript objects, and handles errors.
+                </p>
+
+                <a href="#json" class="btn primary">Start Learning</a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-top">
+                        <span></span><span></span><span></span>
+                        <small>api-response.json</small>
+                    </div>
+                    <pre><code>{
+  "name": "Arslan",
+  "skill": "JavaScript",
+  "learning": true
+}</code></pre>
+                    <div class="visual-footer">JSON DATA RECEIVED ✓</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="json">
+            <div class="section-heading">
+                <span class="eyebrow">CONCEPT 01</span>
+                <h2>What is JSON?</h2>
+                <p>JSON stands for JavaScript Object Notation. It is a text format used to exchange structured data.</p>
+            </div>
+
+            <div class="two-column">
+                <article class="lesson-card">
+                    <h3>JSON Example</h3>
+                    <pre><code>{
+  "name": "Arslan",
+  "age": 18,
+  "skills": ["HTML", "CSS", "JavaScript"],
+  "isLearning": true
+}</code></pre>
+                    <p>JSON supports strings, numbers, booleans, arrays, objects, and null.</p>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Important JSON Rules</h3>
+                    <ul class="learning-list">
+                        <li>Property names must use double quotes.</li>
+                        <li>Strings must use double quotes.</li>
+                        <li>JSON does not allow comments.</li>
+                        <li>JSON does not allow trailing commas.</li>
+                        <li>JSON is text, not a JavaScript object.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="explanation-box">
+                <h3>Convert between JSON and JavaScript</h3>
+
+                <div class="mini-grid">
+                    <div>
+                        <span class="label">JSON → JavaScript</span>
+                        <pre><code>const jsonText = '{"name":"Arslan"}';
+
+const user = JSON.parse(jsonText);
+
+console.log(user.name);</code></pre>
+                        <p><code>JSON.parse()</code> converts valid JSON text into a JavaScript value.</p>
+                    </div>
+
+                    <div>
+                        <span class="label">JavaScript → JSON</span>
+                        <pre><code>const user = {
+    name: "Arslan",
+    skill: "JavaScript"
+};
+
+const jsonText = JSON.stringify(user);
+
+console.log(jsonText);</code></pre>
+                        <p><code>JSON.stringify()</code> converts a JavaScript value into JSON text.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fetch-section" id="fetch">
+            <div class="section-heading">
+                <span class="eyebrow">CONCEPT 02</span>
+                <h2>What is the Fetch API?</h2>
+                <p>Fetch allows browser JavaScript to make HTTP requests to servers and APIs.</p>
+            </div>
+
+            <div class="flow">
+                <div class="flow-card">
+                    <span>01</span>
+                    <h3>Your JavaScript</h3>
+                    <p>Requests information.</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-card">
+                    <span>02</span>
+                    <h3>API Server</h3>
+                    <p>Processes the request.</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-card">
+                    <span>03</span>
+                    <h3>Response</h3>
+                    <p>Returns data and a status code.</p>
+                </div>
+            </div>
+
+            <article class="lesson-card code-lesson">
+                <h3>A basic Fetch request</h3>
+
+                <pre><code>async function getUser() {
+    try {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/users/1"
+        );
+
+        if (!response.ok) {
+            throw new Error("Request failed");
+        }
+
+        const user = await response.json();
+
+        console.log(user.name);
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+getUser();</code></pre>
+
+                <h4>Understand each step</h4>
+                <ol class="learning-list numbered">
+                    <li><code>fetch(url)</code> sends an HTTP request.</li>
+                    <li><code>await</code> waits for the response Promise.</li>
+                    <li><code>response.ok</code> checks whether the HTTP status is successful.</li>
+                    <li><code>response.json()</code> reads the response body and parses its JSON.</li>
+                    <li><code>try/catch</code> handles errors from the awaited operations.</li>
+                </ol>
+            </article>
+
+            <div class="note-box">
+                <strong>Important:</strong> Fetch normally does not reject just because a server returns an HTTP error
+                such as 404 or 500. Check <code>response.ok</code> yourself. Network errors, by contrast, can reject the
+                Fetch Promise.
+            </div>
+        </section>
+
+        <section class="section practice-section" id="practice">
+            <div class="section-heading">
+                <span class="eyebrow">PRACTICAL LEARNING</span>
+                <h2>Try It Yourself</h2>
+                <p>Run the examples and inspect the results. Both API examples require an internet connection.</p>
+            </div>
+
+            <div class="practice-grid">
+                <article class="practice-card">
+                    <span class="topic-tag">EXAMPLE 01</span>
+                    <h3>Parse JSON</h3>
+                    <p>Convert JSON text into a JavaScript object.</p>
+
+                    <pre><code>const text = '{"name":"Arslan","skill":"JavaScript"}';
+const user = JSON.parse(text);
+console.log(user.name, user.skill);</code></pre>
+
+                    <button class="btn primary" id="parseBtn">Run Example</button>
+                    <pre class="output" id="parseOutput">Output will appear here.</pre>
+                </article>
+
+                <article class="practice-card">
+                    <span class="topic-tag">EXAMPLE 02</span>
+                    <h3>Fetch a user</h3>
+                    <p>Request a sample user from a public testing API.</p>
+
+                    <pre><code>fetch("https://jsonplaceholder.typicode.com/users/1")
+    .then(response => {
+        if (!response.ok) throw new Error("Request failed");
+        return response.json();
+    })
+    .then(user => console.log(user))
+    .catch(error => console.error(error));</code></pre>
+
+                    <button class="btn primary" id="fetchBtn">Fetch User</button>
+                    <pre class="output" id="fetchOutput">API data will appear here.</pre>
+                </article>
+            </div>
+        </section>
+
+        <section class="section recap-section">
+            <div class="section-heading">
+                <span class="eyebrow">REMEMBER THESE</span>
+                <h2>Day 5 Summary</h2>
+            </div>
+
+            <div class="recap-grid">
+                <article>
+                    <h3>JSON.parse()</h3>
+                    <p>JSON text → JavaScript value.</p>
+                </article>
+                <article>
+                    <h3>JSON.stringify()</h3>
+                    <p>JavaScript value → JSON text.</p>
+                </article>
+                <article>
+                    <h3>fetch()</h3>
+                    <p>Sends an HTTP request and returns a Promise for a Response.</p>
+                </article>
+                <article>
+                    <h3>response.json()</h3>
+                    <p>Reads and parses the response body as JSON.</p>
+                </article>
+            </div>
+
+            <div class="final-task">
+                <h3>Your practice task</h3>
+                <p>
+                    Change the API URL from <code>/users/1</code> to <code>/users/2</code>.
+                    Fetch the second user and display their name and email. Then deliberately
+                    try an invalid URL and observe what happens.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <section class="revision-download">
+        <div class="download-card">
+            <img src="image.webp" alt="JavaScript Day 5 Revision">
+
+            <div class="download-content">
+                <h3>Day 05 Revision</h3>
+                <p>Download the complete revision image.</p>
+                <a href="image.webp" download="Day-05-Revision.png">
+                    ↓ Download Image
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <!-- Learning -->
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
+
+    <title>Day 2 | Destructuring, Spread & Rest | Arslan Weblab</title>
+    <link rel="icon" href="logo.webp">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="brand" href="https://arslan-weblab.netlify.app/" target="_blank">
+            <img src="logo.webp" alt="Arslan Weblab logo" onerror="this.style.display='none'">
+            <span>Arslan <strong>Weblab</strong></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#lessons">Lessons</a>
+            <a href="#playground">Playground</a>
+            <a href="#exercises">Exercises</a>
+            <a href="#quiz">Quiz</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="#it-learning">IT Learning</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-btn" type="button">
+                    Days <span>⌄</span>
+                </button>
+
+                <div class="nav-dropdown-menu">
+                    <a href="../Day 1/index.html">Day 01</a>
+                    <a href="../Day 2/index.html" class="active">Day 02</a>
+                    <a href="../Day 3/index.html">Day 03</a>
+                    <a href="../Day 4/index.html">Day 04</a>
+                    <a href="../Day 5/index.html">Day 05</a>
+                    <a href="../Day 6/index.html">Day 06</a>
+                    <a href="../Day 7/index.html">Day 07</a>
+                    <a href="../Day 8/index.html">Day 08</a>
+                    <a href="../Day 9/index.html">Day 09</a>
+                    <a href="../Day 10/index.html">Day 10</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">BACKEND DEVELOPMENT ROADMAP · DAY 02</span>
+
+                <h1>Master <span>Destructuring,</span><br>
+                    Spread & Rest</h1>
+
+                <p>
+                    Write cleaner JavaScript by extracting values, copying
+                    data, combining arrays and objects, and handling
+                    flexible function arguments.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#lessons">
+                        Start Learning →
+                    </a>
+                    <a class="btn btn-secondary" href="#playground">
+                        Try the Playground
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div><strong>04</strong><span>Core Concepts</span></div>
+                    <div><strong>05</strong><span>Exercises</span></div>
+                    <div><strong>05</strong><span>Quiz Questions</span></div>
+                </div>
+            </div>
+
+            <div class="code-card hero-code">
+                <div class="code-header">
+                    <div class="window-dots"><i></i><i></i><i></i></div>
+                    <span>example.js</span>
+                    <span class="live-tag">LIVE EXAMPLE</span>
+                </div>
+
+                <pre><code><span class="keyword">const</span> developer = {
+  name: <span class="string">"Arslan"</span>,
+  skill: <span class="string">"JavaScript"</span>
+};
+
+<span class="comment">// Destructuring</span>
+<span class="keyword">const</span> { name, skill } = developer;
+
+<span class="comment">// Spread</span>
+<span class="keyword">const</span> updated = {
+  ...developer,
+  level: <span class="string">"Beginner"</span>
+};
+
+console.log(name);
+console.log(updated);</code></pre>
+            </div>
+        </section>
+
+        <section class="section" id="roadmap">
+            <div class="section-heading">
+                <span class="eyebrow">YOUR LEARNING PATH</span>
+                <h2>Today's Learning Goals</h2>
+                <p>Understand each concept, then practise it yourself.</p>
+            </div>
+
+            <div class="goal-grid">
+                <article class="goal-card">
+                    <span class="goal-number">01</span>
+                    <h3>Array Destructuring</h3>
+                    <p>Extract values from arrays into separate variables.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">02</span>
+                    <h3>Object Destructuring</h3>
+                    <p>Access object properties with shorter syntax.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">03</span>
+                    <h3>Spread Operator</h3>
+                    <p>Expand arrays and objects to copy or combine data.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">04</span>
+                    <h3>Rest Parameters</h3>
+                    <p>Collect multiple function arguments into one array.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="lessons">
+            <div class="section-heading">
+                <span class="eyebrow">THE FUNDAMENTALS</span>
+                <h2>Learn the Concepts</h2>
+                <p>Read the explanation and study the examples.</p>
+            </div>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">01</span>
+                    <div>
+                        <h3>Array Destructuring</h3>
+                        <p>Extract array values into variables.</p>
+                    </div>
+                </div>
+
+                <p>
+                    Without destructuring, you access values by their index.
+                    Destructuring lets you unpack those values directly.
+                </p>
+
+                <div class="code-example">
+                    <pre><code><span class="keyword">const</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>];
+
+<span class="comment">// Traditional way</span>
+<span class="keyword">const</span> first = colors[0];
+<span class="keyword">const</span> second = colors[1];
+
+<span class="comment">// Destructuring</span>
+<span class="keyword">const</span> [a, b, c] = colors;
+
+console.log(a); <span class="comment">// red</span>
+console.log(b); <span class="comment">// blue</span>
+console.log(c); <span class="comment">// green</span></code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> Array destructuring depends on
+                    position. The first variable gets the first value.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">02</span>
+                    <div>
+                        <h3>Object Destructuring</h3>
+                        <p>Extract values using property names.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code><span class="keyword">const</span> user = {
+  name: <span class="string">"Arslan"</span>,
+  age: 17,
+  skill: <span class="string">"JavaScript"</span>
+};
+
+<span class="keyword">const</span> { name, skill } = user;
+
+console.log(name);  <span class="comment">// Arslan</span>
+console.log(skill); <span class="comment">// JavaScript</span>
+
+<span class="comment">// Rename a variable</span>
+<span class="keyword">const</span> { name: userName } = user;
+console.log(userName); <span class="comment">// Arslan</span>
+
+<span class="comment">// Set a default value</span>
+<span class="keyword">const</span> { country = <span class="string">"Pakistan"</span> } = user;
+console.log(country);</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> Object destructuring uses
+                    property names, not the order of properties.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">03</span>
+                    <div>
+                        <h3>Spread Operator (...)</h3>
+                        <p>Expand iterable values or enumerable object properties.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code><span class="comment">// Copy an array</span>
+<span class="keyword">const</span> original = [1, 2, 3];
+<span class="keyword">const</span> copy = [...original];
+
+<span class="comment">// Combine arrays</span>
+<span class="keyword">const</span> extra = [4, 5];
+<span class="keyword">const</span> combined = [...original, ...extra];
+
+<span class="comment">// Copy and update an object</span>
+<span class="keyword">const</span> profile = {
+  name: <span class="string">"Arslan"</span>,
+  skill: <span class="string">"HTML"</span>
+};
+
+<span class="keyword">const</span> updatedProfile = {
+  ...profile,
+  skill: <span class="string">"JavaScript"</span>
+};
+
+console.log(combined);       <span class="comment">// [1, 2, 3, 4, 5]</span>
+console.log(updatedProfile); <span class="comment">// Updated object</span></code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Important:</strong> Spread creates a shallow copy.
+                    Nested objects are still shared unless you copy them separately.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">04</span>
+                    <div>
+                        <h3>Rest Parameters (...)</h3>
+                        <p>Collect remaining arguments into an array.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code><span class="keyword">function</span> sum(...numbers) {
+  <span class="keyword">return</span> numbers.reduce(
+    (total, number) => total + number,
+    0
+  );
+}
+
+console.log(sum(2, 3));       <span class="comment">// 5</span>
+console.log(sum(1, 2, 3, 4)); <span class="comment">// 10</span>
+
+<span class="comment">// Rest in destructuring</span>
+<span class="keyword">const</span> [first, ...remaining] = [10, 20, 30, 40];
+
+console.log(first);     <span class="comment">// 10</span>
+console.log(remaining); <span class="comment">// [20, 30, 40]</span></code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> Rest gathers the remaining values.
+                    In function parameters, it must be the last parameter.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">05</span>
+                    <div>
+                        <h3>Spread vs Rest</h3>
+                        <p>Same three dots, different jobs.</p>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Spread</th>
+                                <th>Rest</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Purpose</td>
+                                <td>Expands values</td>
+                                <td>Collects values</td>
+                            </tr>
+                            <tr>
+                                <td>Example</td>
+                                <td><code>[...items]</code></td>
+                                <td><code>function fn(...args)</code></td>
+                            </tr>
+                            <tr>
+                                <td>Common use</td>
+                                <td>Copying and merging</td>
+                                <td>Flexible arguments</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="lesson-card mistakes-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">!</span>
+                    <div>
+                        <h3>Common Mistakes</h3>
+                        <p>Small syntax errors can cause disproportionately annoying problems.</p>
+                    </div>
+                </div>
+
+                <ul class="mistake-list">
+                    <li>
+                        <code>const { name } = user;</code>
+                        <span>Correct for an object with a <code>name</code> property.</span>
+                    </li>
+                    <li>
+                        <code>const [first] = items;</code>
+                        <span>Correct for getting the first array value.</span>
+                    </li>
+                    <li>
+                        <code>function add(...numbers, tax) {}</code>
+                        <span>Incorrect. A rest parameter must be last.</span>
+                    </li>
+                    <li>
+                        <code>const copy = { ...original };</code>
+                        <span>This is a shallow copy, not a complete deep clone.</span>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="section" id="playground">
+            <div class="section-heading">
+                <span class="eyebrow">PRACTISE JAVASCRIPT</span>
+                <h2>Code Playground</h2>
+                <p>Write JavaScript, run it, and inspect the output.</p>
+            </div>
+
+            <div class="playground">
+                <div class="editor-header">
+                    <span>script.js</span>
+                    <button class="btn btn-small btn-secondary" id="resetCode">
+                        Reset Code
+                    </button>
+                </div>
+
+                <label class="sr-only" for="codeEditor">JavaScript code editor</label>
+                <textarea id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off"
+                    aria-label="JavaScript code editor">const numbers = [10, 20, 30];
+
+// Destructuring
+const [first, second] = numbers;
+
+console.log("First:", first);
+console.log("Second:", second);
+
+// Spread
+const moreNumbers = [...numbers, 40, 50];
+console.log("Combined:", moreNumbers);
+
+// Rest
+function add(...values) {
+  return values.reduce((sum, value) => sum + value, 0);
+}
+
+console.log("Sum:", add(5, 10, 15));</textarea>
+
+                <div class="editor-actions">
+                    <button class="btn btn-primary" id="runCode">▶ Run Code</button>
+                    <span class="small-muted">Output is isolated from the main page.</span>
+                </div>
+
+                <div class="output-heading">
+                    <span>Console Output</span>
+                    <button class="text-button" id="clearOutput">Clear</button>
+                </div>
+                <pre class="console-output" id="consoleOutput" aria-live="polite">Your output will appear here.</pre>
+                <p class="small-muted security-note">
+                    This playground uses a sandboxed iframe. Do not paste code
+                    you do not understand into any coding environment.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="exercises">
+            <div class="section-heading">
+                <span class="eyebrow">YOUR TURN</span>
+                <h2>Five Coding Exercises</h2>
+                <p>Try these before looking at the solutions.</p>
+            </div>
+
+            <div class="exercise-list">
+                <details class="exercise">
+                    <summary>Exercise 1: Array Destructuring</summary>
+                    <p>Extract the first and second values from this array.</p>
+                    <pre><code>const subjects = ["Physics", "Chemistry", "Biology"];</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">
+                        Show Solution
+                    </button>
+                    <pre class="solution"><code>const [first, second] = subjects;
+console.log(first, second);</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 2: Object Destructuring</summary>
+                    <p>Extract the name and profession from this object.</p>
+                    <pre><code>const developer = {
+  name: "Arslan",
+  profession: "Developer"
+};</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">
+                        Show Solution
+                    </button>
+                    <pre class="solution"><code>const { name, profession } = developer;
+console.log(name, profession);</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 3: Spread Operator</summary>
+                    <p>Combine these arrays into one new array.</p>
+                    <pre><code>const a = [1, 2];
+const b = [3, 4];</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">
+                        Show Solution
+                    </button>
+                    <pre class="solution"><code>const combined = [...a, ...b];
+console.log(combined);</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 4: Rest Parameters</summary>
+                    <p>Create a function that accepts any number of values and returns their sum.</p>
+                    <button class="btn btn-small btn-secondary show-solution">
+                        Show Solution
+                    </button>
+                    <pre class="solution"><code>function sum(...numbers) {
+  return numbers.reduce((total, number) => total + number, 0);
+}
+
+console.log(sum(2, 4, 6));</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 5: Developer Profile Builder</summary>
+                    <p>
+                        Create a profile object, copy it with spread, and add
+                        a new property called <code>level</code>. Keep the
+                        original object unchanged.
+                    </p>
+                    <button class="btn btn-small btn-secondary show-solution">
+                        Show Solution
+                    </button>
+                    <pre class="solution"><code>const profile = {
+  name: "Arslan",
+  skill: "JavaScript"
+};
+
+const updatedProfile = {
+  ...profile,
+  level: "Beginner"
+};
+
+console.log(profile);
+console.log(updatedProfile);</code></pre>
+                </details>
+            </div>
+        </section>
+
+        <section class="section" id="quiz">
+            <div class="section-heading">
+                <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+                <h2>Day 2 Quiz</h2>
+                <p>Choose one answer for each question.</p>
+            </div>
+
+            <form id="quizForm" class="quiz-form">
+                <fieldset class="question">
+                    <legend>1. What does array destructuring use to assign values?</legend>
+                    <label><input type="radio" name="q1" value="a"> Property names</label>
+                    <label><input type="radio" name="q1" value="b"> Array positions</label>
+                    <label><input type="radio" name="q1" value="c"> Function names</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>2. What does <code>...items</code> do inside a new array literal?</legend>
+                    <label><input type="radio" name="q2" value="a"> Expands the iterable's values</label>
+                    <label><input type="radio" name="q2" value="b"> Deletes the array</label>
+                    <label><input type="radio" name="q2" value="c"> Converts it to a string</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>3. Which syntax collects function arguments into an array?</legend>
+                    <label><input type="radio" name="q3" value="a"> function sum(numbers...)</label>
+                    <label><input type="radio" name="q3" value="b"> function sum(..numbers)</label>
+                    <label><input type="radio" name="q3" value="c"> function sum(...numbers)</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>4. What is the result of <code>const [a, b] = [5, 8]</code>?</legend>
+                    <label><input type="radio" name="q4" value="a"> a = 8, b = 5</label>
+                    <label><input type="radio" name="q4" value="b"> a = 5, b = 8</label>
+                    <label><input type="radio" name="q4" value="c"> Both are undefined</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>5. Does object spread make a deep copy of nested objects?</legend>
+                    <label><input type="radio" name="q5" value="a"> Yes, always</label>
+                    <label><input type="radio" name="q5" value="b"> Only for arrays</label>
+                    <label><input type="radio" name="q5" value="c"> No, it makes a shallow copy</label>
+                </fieldset>
+
+                <button class="btn btn-primary" type="submit">Check My Answers</button>
+                <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <section class="section completion-section">
+            <div class="completion-card">
+                <span class="eyebrow">DAY 2 CHECKLIST</span>
+                <h2>Track Your Progress</h2>
+                <p>Tick each item when you can explain it without copying.</p>
+
+                <label><input type="checkbox" class="progress-check"> I understand array destructuring.</label>
+                <label><input type="checkbox" class="progress-check"> I understand object destructuring.</label>
+                <label><input type="checkbox" class="progress-check"> I can use spread to copy and combine data.</label>
+                <label><input type="checkbox" class="progress-check"> I can write functions using rest
+                    parameters.</label>
+                <label><input type="checkbox" class="progress-check"> I completed the exercises and quiz.</label>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">0 of 5 completed</p>
+            </div>
+        </section>
+    </main>
+
+    <section class="revision-download">
+        <div class="download-card">
+            <img src="image.webp" alt="JavaScript Day 2 Revision">
+
+            <div class="download-content">
+                <h3>Day 02 Revision</h3>
+                <p>Download the complete revision image.</p>
+                <a href="image.webp" download="Day-02-Revision.png">
+                    ↓ Download Image
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+</body>
+
+</html>

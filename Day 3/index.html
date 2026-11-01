@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d19">
+
+    <title>Day 3 | JavaScript Array Methods | Arslan Weblab</title>
+
+    <link rel="icon" href="logo.webp">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="https://arslan-weblab.netlify.app/" target="_blank" class="brand">
+            <img src="logo.webp" alt="Arslan Weblab logo" onerror="this.style.display='none'">
+            <span>Arslan <strong>Weblab</strong></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#lessons">Lessons</a>
+            <a href="#playground">Playground</a>
+            <a href="#exercises">Exercises</a>
+            <a href="#quiz">Quiz</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="#it-learning">IT Learning</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-btn" type="button">
+                    Days <span>⌄</span>
+                </button>
+
+                <div class="nav-dropdown-menu">
+                    <a href="../Day 1/index.html">Day 01</a>
+                    <a href="../Day 2/index.html">Day 02</a>
+                    <a href="../Day 3/index.html" class="active">Day 03</a>
+                    <a href="../Day 4/index.html">Day 04</a>
+                    <a href="../Day 5/index.html">Day 05</a>
+                    <a href="../Day 6/index.html">Day 06</a>
+                    <a href="../Day 7/index.html">Day 07</a>
+                    <a href="../Day 8/index.html">Day 08</a>
+                    <a href="../Day 9/index.html">Day 09</a>
+                    <a href="../Day 10/index.html">Day 10</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">BACKEND DEVELOPMENT ROADMAP · DAY 03</span>
+
+                <h1>Master JavaScript<br><span>Array Methods</span></h1>
+
+                <p>
+                    Stop writing unnecessary loops for every task.
+                    Learn how to transform, search, filter, and calculate
+                    array data using modern JavaScript methods.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#lessons" class="btn btn-primary">Start Learning →</a>
+                    <a href="#playground" class="btn btn-secondary">Try the Code</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div><strong>08</strong><span>Core Methods</span></div>
+                    <div><strong>05</strong><span>Exercises</span></div>
+                    <div><strong>05</strong><span>Quiz Questions</span></div>
+                </div>
+            </div>
+
+            <div class="code-card">
+                <div class="code-header">
+                    <div class="window-dots"><i></i><i></i><i></i></div>
+                    <span>arrays.js</span>
+                    <span class="live-tag">JAVASCRIPT</span>
+                </div>
+
+                <pre><code><span class="keyword">const</span> prices = [100, 200, 300, 400];
+
+<span class="comment">// Transform values</span>
+<span class="keyword">const</span> doubled = prices.map(
+    price => price * 2
+);
+
+<span class="comment">// Select values</span>
+<span class="keyword">const</span> expensive = prices.filter(
+    price => price >= 300
+);
+
+console.log(doubled);
+console.log(expensive);</code></pre>
+            </div>
+        </section>
+
+        <section class="section" id="overview">
+            <div class="section-heading">
+                <span class="eyebrow">TODAY'S ROADMAP</span>
+                <h2>What You Will Learn</h2>
+                <p>Understand what each method does and when to use it.</p>
+            </div>
+
+            <div class="goal-grid">
+                <article class="goal-card">
+                    <span class="goal-number">01</span>
+                    <h3>Loop & Transform</h3>
+                    <p>Use forEach() to perform actions and map() to create transformed arrays.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">02</span>
+                    <h3>Filter & Search</h3>
+                    <p>Find matching items using filter(), find(), and findIndex().</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">03</span>
+                    <h3>Calculate</h3>
+                    <p>Use reduce() to calculate totals, sums, and other results.</p>
+                </article>
+
+                <article class="goal-card">
+                    <span class="goal-number">04</span>
+                    <h3>Check & Sort</h3>
+                    <p>Test conditions with some() and every(), and organize values with sort().</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="lessons">
+            <div class="section-heading">
+                <span class="eyebrow">LEARN BY EXAMPLE</span>
+                <h2>JavaScript Array Methods</h2>
+                <p>Read the code, understand the output, and then try it yourself.</p>
+            </div>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">01</span>
+                    <div>
+                        <h3>forEach()</h3>
+                        <p>Perform an action for every array element.</p>
+                    </div>
+                </div>
+
+                <p>
+                    Use forEach() when you want to perform an action for each
+                    item. It does not create a new array from the callback results.
+                </p>
+
+                <div class="code-example">
+                    <pre><code>const names = ["Arslan", "Ali", "Ahmed"];
+
+names.forEach((name, index) => {
+    console.log(index, name);
+});
+
+// Output:
+// 0 Arslan
+// 1 Ali
+// 2 Ahmed</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> Use forEach() for actions, such as
+                    displaying items. Use map() when you need a new array.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">02</span>
+                    <div>
+                        <h3>map()</h3>
+                        <p>Transform every element into a new array.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>const numbers = [1, 2, 3, 4];
+
+const squares = numbers.map(number => number * number);
+
+console.log(squares);
+// [1, 4, 9, 16]
+
+console.log(numbers);
+// [1, 2, 3, 4]</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> map() returns a new array containing
+                    the callback's return values.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">03</span>
+                    <div>
+                        <h3>filter()</h3>
+                        <p>Create an array containing elements that pass a condition.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>const ages = [12, 18, 15, 22, 30];
+
+const adults = ages.filter(age => age >= 18);
+
+console.log(adults);
+// [18, 22, 30]</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> filter() returns all matching elements.
+                    If nothing matches, it returns an empty array.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">04</span>
+                    <div>
+                        <h3>find() and findIndex()</h3>
+                        <p>Find the first matching element or its position.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>const numbers = [10, 25, 30, 45];
+
+const found = numbers.find(number => number > 20);
+const position = numbers.findIndex(number => number > 20);
+
+console.log(found);
+// 25
+
+console.log(position);
+// 1
+
+console.log(numbers.find(number => number > 100));
+// undefined
+
+console.log(numbers.findIndex(number => number > 100));
+// -1</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> find() returns the first matching
+                    element. findIndex() returns its index. When no match exists,
+                    they return undefined and -1 respectively.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">05</span>
+                    <div>
+                        <h3>reduce()</h3>
+                        <p>Combine array values into one result.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>const prices = [100, 200, 300, 400];
+
+const total = prices.reduce(
+    (sum, price) => sum + price,
+    0
+);
+
+console.log(total);
+// 1000</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> The second argument, 0 here, is the
+                    initial accumulator value. Providing an initial value is
+                    especially useful when the array might be empty.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">06</span>
+                    <div>
+                        <h3>some() and every()</h3>
+                        <p>Check whether some or all elements meet a condition.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>const scores = [45, 60, 75, 90];
+
+const hasHighScore = scores.some(score => score >= 80);
+const allPassed = scores.every(score => score >= 40);
+
+console.log(hasHighScore);
+// true
+
+console.log(allPassed);
+// true</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> some() checks whether at least one
+                    element matches. every() checks whether all elements match.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">07</span>
+                    <div>
+                        <h3>sort()</h3>
+                        <p>Sort array elements in a chosen order.</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>const numbers = [100, 5, 25, 10];
+
+const ascending = [...numbers].sort((a, b) => a - b);
+const descending = [...numbers].sort((a, b) => b - a);
+
+console.log(ascending);
+// [5, 10, 25, 100]
+
+console.log(descending);
+// [100, 25, 10, 5]
+
+console.log(numbers);
+// [100, 5, 25, 10]</code></pre>
+                </div>
+
+                <div class="tip">
+                    <strong>Remember:</strong> sort() changes the original array.
+                    Copy it first with [...numbers] if you want to preserve it.
+                    Without a comparator, numbers are sorted lexicographically
+                    after being converted to strings.
+                </div>
+            </article>
+
+            <article class="lesson-card">
+                <div class="lesson-title">
+                    <span class="lesson-icon">08</span>
+                    <div>
+                        <h3>Quick Comparison</h3>
+                        <p>Choose the correct method for the job.</p>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Purpose</th>
+                                <th>Returns</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>forEach()</td>
+                                <td>Perform an action per item</td>
+                                <td>undefined</td>
+                            </tr>
+                            <tr>
+                                <td>map()</td>
+                                <td>Transform each item</td>
+                                <td>New array</td>
+                            </tr>
+                            <tr>
+                                <td>filter()</td>
+                                <td>Select matching items</td>
+                                <td>New array</td>
+                            </tr>
+                            <tr>
+                                <td>find()</td>
+                                <td>Find first matching item</td>
+                                <td>Element or undefined</td>
+                            </tr>
+                            <tr>
+                                <td>findIndex()</td>
+                                <td>Find first matching position</td>
+                                <td>Index or -1</td>
+                            </tr>
+                            <tr>
+                                <td>reduce()</td>
+                                <td>Accumulate a result</td>
+                                <td>Single result</td>
+                            </tr>
+                            <tr>
+                                <td>some()</td>
+                                <td>Check if any match</td>
+                                <td>Boolean</td>
+                            </tr>
+                            <tr>
+                                <td>every()</td>
+                                <td>Check if all match</td>
+                                <td>Boolean</td>
+                            </tr>
+                            <tr>
+                                <td>sort()</td>
+                                <td>Sort elements</td>
+                                <td>Same array, sorted</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <section class="section" id="playground">
+            <div class="section-heading">
+                <span class="eyebrow">PRACTICAL CODING</span>
+                <h2>JavaScript Playground</h2>
+                <p>Edit the example, run your code, and inspect the console output.</p>
+            </div>
+
+            <div class="playground">
+                <div class="editor-header">
+                    <span>arrays.js</span>
+                    <button class="btn btn-small btn-secondary" id="resetCode">Reset Code</button>
+                </div>
+
+                <label class="sr-only" for="codeEditor">JavaScript code editor</label>
+                <textarea id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off">const numbers = [10, 20, 30, 40, 50];
+
+const doubled = numbers.map(number => number * 2);
+const largeNumbers = numbers.filter(number => number >= 30);
+const total = numbers.reduce((sum, number) => sum + number, 0);
+
+console.log("Original:", numbers);
+console.log("Doubled:", doubled);
+console.log("Large numbers:", largeNumbers);
+console.log("Total:", total);</textarea>
+
+                <div class="editor-actions">
+                    <button class="btn btn-primary" id="runCode">▶ Run Code</button>
+                    <span class="small-muted">Runs inside a sandboxed iframe.</span>
+                </div>
+
+                <div class="output-heading">
+                    <span>Console Output</span>
+                    <button class="text-button" id="clearOutput">Clear</button>
+                </div>
+
+                <pre id="consoleOutput" class="console-output" aria-live="polite">Your output will appear here.</pre>
+
+                <p class="small-muted security-note">
+                    The playground isolates the code from the main page.
+                    Avoid running code you do not understand.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="exercises">
+            <div class="section-heading">
+                <span class="eyebrow">PRACTICE MAKES PROGRESS</span>
+                <h2>Five Coding Exercises</h2>
+                <p>Attempt each exercise before revealing its solution.</p>
+            </div>
+
+            <div class="exercise-list">
+                <details class="exercise">
+                    <summary>Exercise 1: Transform with map()</summary>
+                    <p>Convert every number to its square.</p>
+                    <pre><code>const numbers = [2, 3, 4, 5];</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>const squares = numbers.map(number => number ** 2);
+console.log(squares); // [4, 9, 16, 25]</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 2: Filter with filter()</summary>
+                    <p>Return only numbers greater than 10.</p>
+                    <pre><code>const numbers = [4, 12, 7, 20, 9, 15];</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>const result = numbers.filter(number => number > 10);
+console.log(result); // [12, 20, 15]</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 3: Find an item</summary>
+                    <p>Find the first user whose age is at least 18.</p>
+                    <pre><code>const users = [
+    { name: "Ali", age: 16 },
+    { name: "Sara", age: 20 },
+    { name: "Ahmed", age: 25 }
+];</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>const user = users.find(person => person.age >= 18);
+console.log(user); // { name: "Sara", age: 20 }</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 4: Calculate with reduce()</summary>
+                    <p>Calculate the total cost of these items.</p>
+                    <pre><code>const prices = [250, 150, 300, 100];</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>const total = prices.reduce((sum, price) => sum + price, 0);
+console.log(total); // 800</code></pre>
+                </details>
+
+                <details class="exercise">
+                    <summary>Exercise 5: Mini Project, Shopping Cart Total</summary>
+                    <p>Calculate the total price of all products in a shopping cart.</p>
+                    <pre><code>const cart = [
+    { name: "Keyboard", price: 2500 },
+    { name: "Mouse", price: 1200 },
+    { name: "Headphones", price: 3500 }
+];</code></pre>
+                    <button class="btn btn-small btn-secondary show-solution">Show Solution</button>
+                    <pre class="solution"><code>const total = cart.reduce(
+    (sum, product) => sum + product.price,
+    0
+);
+
+console.log("Cart total:", total);
+// Cart total: 7200</code></pre>
+                </details>
+            </div>
+        </section>
+
+        <section class="section" id="quiz">
+            <div class="section-heading">
+                <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+                <h2>Day 3 Quiz</h2>
+                <p>Select one answer per question.</p>
+            </div>
+
+            <form id="quizForm" class="quiz-form">
+                <fieldset class="question">
+                    <legend>1. Which method creates a new array by transforming each element?</legend>
+                    <label><input type="radio" name="q1" value="a"> forEach()</label>
+                    <label><input type="radio" name="q1" value="b"> map()</label>
+                    <label><input type="radio" name="q1" value="c"> find()</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>2. Which method returns all elements that match a condition?</legend>
+                    <label><input type="radio" name="q2" value="a"> find()</label>
+                    <label><input type="radio" name="q2" value="b"> some()</label>
+                    <label><input type="radio" name="q2" value="c"> filter()</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>3. What does find() return if no element matches?</legend>
+                    <label><input type="radio" name="q3" value="a"> undefined</label>
+                    <label><input type="radio" name="q3" value="b"> -1</label>
+                    <label><input type="radio" name="q3" value="c"> An empty array</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>4. Which method is commonly used to calculate a sum?</legend>
+                    <label><input type="radio" name="q4" value="a"> every()</label>
+                    <label><input type="radio" name="q4" value="b"> reduce()</label>
+                    <label><input type="radio" name="q4" value="c"> findIndex()</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>5. What happens when you call sort() on an array?</legend>
+                    <label><input type="radio" name="q5" value="a"> It always creates a separate sorted array.</label>
+                    <label><input type="radio" name="q5" value="b"> It returns a boolean.</label>
+                    <label><input type="radio" name="q5" value="c"> It sorts the original array in place.</label>
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary">Check My Answers</button>
+                <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <section class="section">
+            <div class="completion-card">
+                <span class="eyebrow">DAY 3 CHECKLIST</span>
+                <h2>Track Your Progress</h2>
+                <p>Check each item when you can use it without copying the lesson.</p>
+
+                <label><input type="checkbox" class="progress-check"> I understand forEach() and map().</label>
+                <label><input type="checkbox" class="progress-check"> I can filter and search arrays.</label>
+                <label><input type="checkbox" class="progress-check"> I can calculate values with reduce().</label>
+                <label><input type="checkbox" class="progress-check"> I understand some(), every(), and sort().</label>
+                <label><input type="checkbox" class="progress-check"> I completed the exercises and quiz.</label>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">0 of 5 completed</p>
+            </div>
+        </section>
+    </main>
+
+    <section class="revision-download">
+        <div class="download-card">
+            <img src="image.webp" alt="JavaScript Day 3 Revision">
+
+            <div class="download-content">
+                <h3>Day 03 Revision</h3>
+                <p>Download the complete revision image.</p>
+                <a href="image.webp" download="Day-03-Revision.png">
+                    ↓ Download Image
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn HTTP fundamentals, requests, responses, methods, status codes, and headers with Arslan Weblab.">
+    <title>Day 8 | HTTP Fundamentals | Arslan Weblab</title>
+    <link rel="icon" href="logo.webp">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="https://arslan-weblab.netlify.app/" target="_blank" class="brand">
+            <img src="logo.webp" alt="Arslan Weblab Logo">
+            <span>Arslan <b>Weblab</b></span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+        <nav id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#lessons">Lessons</a>
+            <a href="#playground">Playground</a>
+            <a href="#practice">Practice</a>
+            <a href="#quiz">Quiz</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="#it-learning">IT Learning</a>
+
+            <div class="nav-dropdown">
+                <button class="nav-dropdown-btn" type="button">
+                    Days <span>⌄</span>
+                </button>
+
+                <div class="nav-dropdown-menu">
+                    <a href="../Day 1/index.html">Day 01</a>
+                    <a href="../Day 2/index.html">Day 02</a>
+                    <a href="../Day 3/index.html">Day 03</a>
+                    <a href="../Day 4/index.html">Day 04</a>
+                    <a href="../Day 5/index.html">Day 05</a>
+                    <a href="../Day 6/index.html">Day 06</a>
+                    <a href="../Day 7/index.html">Day 07</a>
+                    <a href="../Day 8/index.html" class="active">Day 08</a>
+                    <a href="../Day 9/index.html">Day 09</a>
+                    <a href="../Day 10/index.html">Day 10</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="badge">PHASE 1 · DAY 8</span>
+                <h1>HTTP <span>Fundamentals</span></h1>
+                <p>
+                    Understand how browsers request information from servers,
+                    how servers respond, and how HTTP powers websites and APIs.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#lessons" class="btn primary">Start Learning</a>
+                    <a href="#playground" class="btn secondary">Try Playground</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div><strong>6</strong><span>Core Lessons</span></div>
+                    <div><strong>5</strong><span>Quiz Questions</span></div>
+                    <div><strong>4</strong><span>Exercises</span></div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="network-card">
+                    <div class="network-node">
+                        <span>💻</span>
+                        <strong>Client</strong>
+                        <small>Your browser</small>
+                    </div>
+                    <div class="network-connection">
+                        <span class="request-label">HTTP Request →</span>
+                        <div class="connection-line"></div>
+                        <span class="response-label">← HTTP Response</span>
+                    </div>
+                    <div class="network-node server-node">
+                        <span>🖥️</span>
+                        <strong>Server</strong>
+                        <small>Processes requests</small>
+                    </div>
+                    <div class="network-note">
+                        <span class="status-dot"></span>
+                        Client and server communicate through HTTP.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="lessons">
+            <div class="section-heading">
+                <span class="eyebrow">THE LESSONS</span>
+                <h2>Learn the building blocks</h2>
+                <p>Understand these concepts before moving to backend development.</p>
+            </div>
+
+            <div class="lesson-grid">
+                <article class="lesson-card">
+                    <span class="lesson-number">01</span>
+                    <h3>What is HTTP?</h3>
+                    <p>
+                        HTTP stands for Hypertext Transfer Protocol. It defines
+                        how clients and servers exchange requests and responses.
+                    </p>
+                    <pre><code>Browser
+   |
+   | HTTP Request
+   v
+Web Server
+   |
+   | HTTP Response
+   v
+Browser</code></pre>
+                    <div class="result">HTTP defines the communication rules.</div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">02</span>
+                    <h3>HTTP Requests</h3>
+                    <p>
+                        A request is a message sent by a client to a server.
+                        It can contain a method, URL, headers, and an optional body.
+                    </p>
+                    <pre><code>GET /products HTTP/1.1
+Host: example.com
+Accept: application/json</code></pre>
+                    <div class="result">GET requests commonly retrieve data.</div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">03</span>
+                    <h3>HTTP Responses</h3>
+                    <p>
+                        A response contains a status code, headers, and sometimes
+                        a body containing HTML, JSON, or other data.
+                    </p>
+                    <pre><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+{"message":"Success"}</code></pre>
+                    <div class="result">200 means the request succeeded.</div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">04</span>
+                    <h3>HTTP Methods</h3>
+                    <p>
+                        Methods describe the intended action. GET retrieves data,
+                        POST submits data, PUT replaces a resource, PATCH updates
+                        part of a resource, and DELETE requests removal.
+                    </p>
+                    <pre><code>GET     /users
+POST    /users
+PUT     /users/5
+PATCH   /users/5
+DELETE  /users/5</code></pre>
+                    <div class="result">The method helps describe the operation.</div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">05</span>
+                    <h3>Status Codes</h3>
+                    <p>
+                        Status codes tell the client the outcome of its request.
+                        Their first digit indicates the general category.
+                    </p>
+                    <pre><code>200 OK
+201 Created
+301 Moved Permanently
+400 Bad Request
+401 Unauthorized
+403 Forbidden
+404 Not Found
+500 Internal Server Error</code></pre>
+                    <div class="result">404 means the requested resource was not found.</div>
+                </article>
+
+                <article class="lesson-card">
+                    <span class="lesson-number">06</span>
+                    <h3>HTTP Headers</h3>
+                    <p>
+                        Headers provide additional information about requests and
+                        responses, such as content type, accepted formats, and
+                        authorization details.
+                    </p>
+                    <pre><code>Content-Type: application/json
+Accept: application/json
+Authorization: Bearer TOKEN</code></pre>
+                    <div class="result">Headers describe the message and its context.</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section concept-section">
+            <div class="section-heading">
+                <span class="eyebrow">REQUEST TO RESPONSE</span>
+                <h2>How HTTP works</h2>
+            </div>
+
+            <div class="flow">
+                <article class="flow-step">
+                    <strong>1</strong>
+                    <h3>Client sends</h3>
+                    <p>The browser or application sends an HTTP request.</p>
+                </article>
+                <div class="flow-arrow">→</div>
+                <article class="flow-step">
+                    <strong>2</strong>
+                    <h3>Server processes</h3>
+                    <p>The server examines the request and performs the required work.</p>
+                </article>
+                <div class="flow-arrow">→</div>
+                <article class="flow-step">
+                    <strong>3</strong>
+                    <h3>Server responds</h3>
+                    <p>The server returns a status code, headers, and possibly a body.</p>
+                </article>
+            </div>
+
+            <div class="info-box">
+                <h3>HTTP vs HTTPS</h3>
+                <p>
+                    HTTPS uses HTTP over a connection secured with TLS. This
+                    protects data in transit and helps authenticate the server.
+                    For real websites, HTTPS is the standard choice.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3>Remember this</h3>
+                <p>
+                    HTTP is a stateless protocol: each request is treated
+                    independently by default. Applications can use cookies,
+                    sessions, or tokens to maintain user state across requests.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="playground">
+            <div class="section-heading">
+                <span class="eyebrow">INTERACTIVE LEARNING</span>
+                <h2>HTTP Playground</h2>
+                <p>Simulate requests and inspect their responses. No server required.</p>
+            </div>
+
+            <div class="playground">
+                <div class="request-panel">
+                    <label for="methodSelect">HTTP Method</label>
+                    <select id="methodSelect">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="DELETE">DELETE</option>
+                    </select>
+
+                    <label for="endpointSelect">Endpoint</label>
+                    <select id="endpointSelect">
+                        <option value="/users">/users</option>
+                        <option value="/users/5">/users/5</option>
+                        <option value="/products">/products</option>
+                        <option value="/notfound">/notfound</option>
+                        <option value="/error">/error</option>
+                    </select>
+
+                    <label for="bodyInput">Request Body (JSON for POST/PUT/PATCH)</label>
+                    <textarea id="bodyInput" rows="5">{
+  "name": "Arslan"
+}</textarea>
+
+                    <button class="btn primary full-width" id="sendRequest">
+                        Send Simulated Request
+                    </button>
+                    <button class="btn secondary full-width" id="clearResponse">
+                        Clear Response
+                    </button>
+
+                    <p class="small-note">
+                        This is a local simulation. It does not send data to a real server.
+                    </p>
+                </div>
+
+                <div class="response-panel">
+                    <div class="response-header">
+                        <span>Response Preview</span>
+                        <span id="responseStatus" class="status-pill">Waiting</span>
+                    </div>
+                    <pre id="responseOutput"
+                        aria-live="polite">Choose a method and endpoint, then send your simulated request.</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="practice">
+            <div class="section-heading">
+                <span class="eyebrow">PRACTICE</span>
+                <h2>Test your understanding</h2>
+                <p>Try each exercise before revealing the solution.</p>
+            </div>
+
+            <div class="exercise-list">
+                <article class="exercise">
+                    <h3>Exercise 1: Choose the method</h3>
+                    <p>Which HTTP method is commonly used to retrieve a list of products?</p>
+                    <button class="reveal-btn" data-answer="answer1">Reveal Solution</button>
+                    <pre id="answer1" class="answer hidden"><code>GET /products</code></pre>
+                </article>
+
+                <article class="exercise">
+                    <h3>Exercise 2: Understand the response</h3>
+                    <p>What does the HTTP status code 404 mean?</p>
+                    <button class="reveal-btn" data-answer="answer2">Reveal Solution</button>
+                    <pre id="answer2" class="answer hidden"><code>404 Not Found
+The requested resource could not be found.</code></pre>
+                </article>
+
+                <article class="exercise">
+                    <h3>Exercise 3: Send JSON</h3>
+                    <p>Which header commonly identifies a request body as JSON?</p>
+                    <button class="reveal-btn" data-answer="answer3">Reveal Solution</button>
+                    <pre id="answer3" class="answer hidden"><code>Content-Type: application/json</code></pre>
+                </article>
+
+                <article class="exercise">
+                    <h3>Exercise 4: Read the request</h3>
+                    <p>In <code>PATCH /users/5</code>, what does PATCH indicate?</p>
+                    <button class="reveal-btn" data-answer="answer4">Reveal Solution</button>
+                    <pre id="answer4"
+                        class="answer hidden"><code>PATCH requests a partial update to the resource at /users/5.</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <section class="section quiz-section" id="quiz">
+            <div class="section-heading">
+                <span class="eyebrow">KNOWLEDGE CHECK</span>
+                <h2>Day 8 Quiz</h2>
+                <p>Choose one answer per question.</p>
+            </div>
+
+            <form id="quizForm">
+                <fieldset class="question">
+                    <legend>1. What does HTTP stand for?</legend>
+                    <label><input type="radio" name="q1" value="a"> Hypertext Transfer Protocol</label>
+                    <label><input type="radio" name="q1" value="b"> High Transfer Text Program</label>
+                    <label><input type="radio" name="q1" value="c"> Hyper Tool Transmission Process</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>2. Which method is commonly used to retrieve data?</legend>
+                    <label><input type="radio" name="q2" value="a"> DELETE</label>
+                    <label><input type="radio" name="q2" value="b"> GET</label>
+                    <label><input type="radio" name="q2" value="c"> PATCH</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>3. What does status code 404 mean?</legend>
+                    <label><input type="radio" name="q3" value="a"> Request succeeded</label>
+                    <label><input type="radio" name="q3" value="b"> Server error</label>
+                    <label><input type="radio" name="q3" value="c"> Resource not found</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>4. Which header identifies a JSON request body?</legend>
+                    <label><input type="radio" name="q4" value="a"> Content-Type: application/json</label>
+                    <label><input type="radio" name="q4" value="b"> Status: 200</label>
+                    <label><input type="radio" name="q4" value="c"> Method: JSON</label>
+                </fieldset>
+
+                <fieldset class="question">
+                    <legend>5. What does a server usually send in an HTTP response?</legend>
+                    <label><input type="radio" name="q5" value="a"> Only a URL</label>
+                    <label><input type="radio" name="q5" value="b"> A status code, headers, and possibly a body</label>
+                    <label><input type="radio" name="q5" value="c"> Only a JavaScript function</label>
+                </fieldset>
+
+                <button class="btn primary" type="submit">Check Answers</button>
+                <button class="btn secondary" type="button" id="resetQuiz">Reset Quiz</button>
+            </form>
+
+            <div id="quizResult" class="quiz-result hidden" aria-live="polite"></div>
+        </section>
+
+        <section class="section progress-section">
+            <div class="section-heading">
+                <span class="eyebrow">YOUR LEARNING JOURNEY</span>
+                <h2>Day 8 Progress</h2>
+                <p>Check off each topic as you master it.</p>
+            </div>
+
+            <div class="progress-card">
+                <div class="progress-top">
+                    <span>Completion</span>
+                    <strong id="progressText">0%</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+                <div class="checklist">
+                    <label><input type="checkbox" class="progress-check" data-key="http"> Understand HTTP and HTTPS</label>
+                    <label><input type="checkbox" class="progress-check" data-key="request"> Understand requests</label>
+                    <label><input type="checkbox" class="progress-check" data-key="response"> Understand responses</label>
+                    <label><input type="checkbox" class="progress-check" data-key="methods"> Understand HTTP methods</label>
+                    <label><input type="checkbox" class="progress-check" data-key="status"> Understand status codes and headers</label>
+                    <label><input type="checkbox" class="progress-check" data-key="practice"> Complete exercises and quiz</label>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="revision-download">
+        <div class="download-card">
+            <img src="image.webp" alt="JavaScript Day 8 Revision">
+
+            <div class="download-content">
+                <h3>Day 08 Revision</h3>
+                <p>Download the complete revision image.</p>
+                <a href="image.webp" download="Day-08-Revision.png">
+                    ↓ Download Image
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <a href="https://arslan-weblab.netlify.app/" target="_blank" class="footer-logo">
+                    <img src="logo.webp" alt="Arslan Weblab Logo">
+                    <span>Arslan <strong>Weblab</strong></span>
+                </a>
+
+                <p>
+                    Learning web development one step at a time.
+                    Building skills, projects, and a better future.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#concepts">Concepts</a>
+                <a href="#examples">Examples</a>
+                <a href="#practice">Practice</a>
+            </div>
+
+            <!-- Learning -->
+            <div class="footer-links">
+                <h3>Keep Learning</h3>
+                <a href="#workflow">Promise Workflow</a>
+                <a href="#footer">IT Learning</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank"
+                    rel="noopener noreferrer">MDN Promise Guide</a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Arslan Weblab. All rights reserved.</p>
+            <p>Learn · Build · Improve</p>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+</body>
+
+</html>
